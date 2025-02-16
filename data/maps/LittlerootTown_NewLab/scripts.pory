@@ -1,8 +1,101 @@
-mapscripts LittlerootTown_NewLab_MapScripts {}
+mapscripts LittlerootTown_NewLab_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: LittlerootTown_NewLab_EventScript_BallDefault
+}
 
-script LittlerootTown_NewLab_EventScript_Pokeball1 {
+script LittlerootTown_NewLab_EventScript_BallDefault{
+    setvar(VAR_UNUSED_0x40F7, 0)
+}
 
-	lockall
+script LittlerootTown_NewLab_EventScript_Birch{
+    lockall
+    faceplayer
+    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+        msgbox("Hello, would you like to see more options?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            if(var(VAR_UNUSED_0x40F7) != 2){
+                addvar(VAR_UNUSED_0x40F7, 1)
+            }
+            else{
+                setvar(VAR_UNUSED_0x40F7, 0)
+            }
+            msgbox("Choose your starter wisely.")
+        }
+        else{
+            msgbox("Choose your starter wisely.")
+        }
+    }
+    else{
+        msgbox("Take care of your Pokemon!")
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script LittlerootTown_NewLab_EventScript_PokeballOne{
+    lockall
+    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+        if(var(VAR_UNUSED_0x40F7) == 0){
+            call(LittlerootTown_NewLab_EventScript_Pawniard)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 1){
+            call(LittlerootTown_NewLab_EventScript_Litwick)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 2){
+            call(LittlerootTown_NewLab_EventScript_Tynamo)
+        }
+    }
+    else{
+        msgbox("Don't take another!")
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script LittlerootTown_NewLab_EventScript_PokeballTwo{
+    lockall
+    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+        if(var(VAR_UNUSED_0x40F7) == 0){
+            call(LittlerootTown_NewLab_EventScript_Dreepy)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 1){
+            call(LittlerootTown_NewLab_EventScript_Impidimp)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 2){
+            call(LittlerootTown_NewLab_EventScript_Tinkatink)
+        }
+    }
+    else{
+        msgbox("Don't take another!")
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script LittlerootTown_NewLab_EventScript_PokeballThree{
+    lockall
+    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+        if(var(VAR_UNUSED_0x40F7) == 0){
+            call(LittlerootTown_NewLab_EventScript_Solosis)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 1){
+            call(LittlerootTown_NewLab_EventScript_Riolu)
+        }
+        elif(var(VAR_UNUSED_0x40F7) == 2){
+            call(LittlerootTown_NewLab_EventScript_Jangmo_O)
+        }
+    }
+    else{
+        msgbox("Don't take another!")
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+script LittlerootTown_NewLab_EventScript_Pawniard {
     showmonpic(SPECIES_PAWNIARD, 10,3)
     msgbox("Do you want to choose Pawniard?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
@@ -12,6 +105,7 @@ script LittlerootTown_NewLab_EventScript_Pokeball1 {
             msgbox("You received Pawniard!")
             removeobject(1)
             setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -19,6 +113,7 @@ script LittlerootTown_NewLab_EventScript_Pokeball1 {
             msgbox("You received Pawniard!")
             removeobject(1)
             setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
         else{
@@ -30,10 +125,270 @@ script LittlerootTown_NewLab_EventScript_Pokeball1 {
         hidemonpic
         msgbox(NewLab_NotChosen)
     }
-    waitmessage
-    setflag(FLAG_SYS_POKEMON_GET)
-    releaseall
-    end
+
+}
+
+script LittlerootTown_NewLab_EventScript_Litwick {
+    showmonpic(SPECIES_LITWICK, 10,3)
+    msgbox("Do you want to choose Litwick?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_LITWICK, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Litwick!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Litwick!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Tynamo {
+    showmonpic(SPECIES_TYNAMO, 10,3)
+    msgbox("Do you want to choose Tynamo?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_TYNAMO, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Tynamo!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Tynamo!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Dreepy {
+    showmonpic(SPECIES_DREEPY, 10,3)
+    msgbox("Do you want to choose Dreepy?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_DREEPY, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Dreepy!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Dreepy!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Impidimp {
+    showmonpic(SPECIES_IMPIDIMP, 10,3)
+    msgbox("Do you want to choose Impidimp?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_IMPIDIMP, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Impidimp!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Impidimp!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Tinkatink {
+    showmonpic(SPECIES_TINKATINK, 10,3)
+    msgbox("Do you want to choose Tinkatink?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_TINKATINK, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Tinkatink!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Tinkatink!")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x494)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Solosis {
+    showmonpic(SPECIES_SOLOSIS, 10,3)
+    msgbox("Do you want to choose Solosis?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_SOLOSIS, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Solosis!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Solosis!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Riolu {
+    showmonpic(SPECIES_RIOLU, 10,3)
+    msgbox("Do you want to choose Riolu?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_RIOLU, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Riolu!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Riolu!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+
+}
+
+script LittlerootTown_NewLab_EventScript_Jangmo_O {
+    showmonpic(SPECIES_JANGMO_O, 10,3)
+    msgbox("Do you want to choose Jangmo-o?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_JANGMO_O, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Jangmo-o!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Jangmo-o!")
+            removeobject(3)
+            setflag(FLAG_UNUSED_0x495)
+            setflag(FLAG_SYS_POKEMON_GET)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
 
 }
 
