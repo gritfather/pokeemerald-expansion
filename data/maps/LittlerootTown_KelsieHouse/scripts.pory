@@ -1,1 +1,10 @@
 mapscripts LittlerootTown_KelsieHouse_MapScripts {}
+
+script LittlerootTown_KelsieHouse_Kelsie {
+		lockall
+        faceplayer
+        msgbox(format("Hello! I'm Kelsie, and I love coffee!"))
+        waitmessage
+        releaseall
+        end
+}
