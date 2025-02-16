@@ -20,6 +20,8 @@ LittlerootTown_NewLab_EventScript_Pokeball1_1:
 # 33 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	waitmessage
 # 34 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 35 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	releaseall
 	end
 
@@ -66,38 +68,38 @@ LittlerootTown_NewLab_EventScript_Pokeball1_6:
 
 
 NicknamePartyMon::
-# 41 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 42 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 43 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 44 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 44 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 45 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 46 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 51 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 52 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 53 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 54 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 56 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 57 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 54 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 55 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -115,13 +117,13 @@ LittlerootTown_NewLab_EventScript_Pokeball1_Text_2:
 	.string "No more room$"
 
 NicknamePartyMon_Text_0:
-# 41 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 42 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "Give it a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 56 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 57 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "Pokemon sent to PC$"
 
 NewLab_NotChosen::
-# 60 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 61 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "You did not choose the Pokemon$"

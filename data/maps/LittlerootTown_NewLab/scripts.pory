@@ -31,6 +31,7 @@ script LittlerootTown_NewLab_EventScript_Pokeball1 {
         msgbox(NewLab_NotChosen)
     }
     waitmessage
+    setflag(FLAG_SYS_POKEMON_GET)
     releaseall
     end
 
