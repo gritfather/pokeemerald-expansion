@@ -2041,16 +2041,30 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1021 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
 
-LittlerootTown_KelsieHouseSign::
+LittlerootTown_EventScript_KelsieHouseSign::
 # 1027 "data/maps/LittlerootTown/scripts.pory"
 	lockall
 # 1028 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_KelsieHouseSign_Text_0
+	msgbox LittlerootTown_EventScript_KelsieHouseSign_Text_0
 # 1029 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
 
 
-LittlerootTown_KelsieHouseSign_Text_0:
+LittlerootTown_EventScript_NewLabSign::
+# 1033 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1034 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_EventScript_NewLabSign_Text_0
+# 1035 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	return
+
+
+LittlerootTown_EventScript_KelsieHouseSign_Text_0:
 # 1028 "data/maps/LittlerootTown/scripts.pory"
 	.string "Crash at my place, baby you're a wreck$"
+
+LittlerootTown_EventScript_NewLabSign_Text_0:
+# 1034 "data/maps/LittlerootTown/scripts.pory"
+	.string "Professor Birch's Lab$"

@@ -1,0 +1,63 @@
+mapscripts LittlerootTown_NewLab_MapScripts {}
+
+script LittlerootTown_NewLab_EventScript_Pokeball1 {
+
+	lockall
+    showmonpic(SPECIES_PAWNIARD, 10,3)
+    msgbox("Do you want to choose Pawniard?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_PAWNIARD, 5, isShiny=YES)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Pawniard!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Pawniard!")
+            removeobject(1)
+            setflag(FLAG_UNUSED_0x493)
+            call(NicknameBoxMon)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(NewLab_NotChosen)
+    }
+    waitmessage
+    releaseall
+    end
+
+}
+
+script NicknamePartyMon{
+
+    msgbox("Give it a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+}
+
+script NicknameBoxMon {
+    
+    msgbox("Give it a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedBoxMon)
+    }
+    msgbox("Pokemon sent to PC")
+
+}
+
+text NewLab_NotChosen{
+    "You did not choose the Pokemon"
+
+}

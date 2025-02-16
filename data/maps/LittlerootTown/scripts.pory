@@ -1023,8 +1023,14 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 `
 
-script LittlerootTown_KelsieHouseSign {
+script LittlerootTown_EventScript_KelsieHouseSign {
     lockall
         msgbox(format("Crash at my place, baby you're a wreck"))
+    releaseall
+}
+
+script LittlerootTown_EventScript_NewLabSign {
+    lockall
+    msgbox(format("Professor Birch's Lab"))
     releaseall
 }

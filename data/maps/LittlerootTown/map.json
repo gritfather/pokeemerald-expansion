@@ -153,6 +153,13 @@
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_KELSIE_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_NEW_LAB",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -277,7 +284,15 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_KelsieHouseSign"
+      "script": "LittlerootTown_EventScript_KelsieHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_EventScript_NewLabSign"
     }
   ]
 }
