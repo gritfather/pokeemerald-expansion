@@ -1156,3 +1156,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootTown_KelsieHouse/scripts.inc"
 
 	.include "data/maps/LittlerootTown_NewLab/scripts.inc"
+
+	.include "data/maps/LittlerootTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/LittlerootTown_PokeMart/scripts.inc"
