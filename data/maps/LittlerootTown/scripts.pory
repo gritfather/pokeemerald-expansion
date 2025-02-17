@@ -52,6 +52,7 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
+    call_if_unset FLAG_UNUSED_0x497, LittlerootTown_EventScript_SetupRivalBattle
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -1033,4 +1034,47 @@ script LittlerootTown_EventScript_NewLabSign {
     lockall
     msgbox(format("Professor Birch's Lab"))
     releaseall
+}
+
+script LittlerootTown_EventScript_SetupRivalBattle{
+    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+        setflag(FLAG_UNUSED_0x496)
+    }
+    else{
+        clearflag(FLAG_UNUSED_0x496)
+    }
+}
+
+script LittlerootTown_EventScript_MayRivalBattle{
+
+        trainerbattle_single(TRAINER_MAY_ROUTE_103_TREECKO, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+    end
+}
+
+script LittlerootTown_EventScript_MayLeaveTown{
+    msgbox(format("I'll get you on the next one. Good luck raising your Pokemon!") MSGBOX_AUTOCLOSE)
+    closemessage
+    lock
+        applymovement(9, moves(
+            walk_down
+            walk_left * 12
+        ))
+        waitmovement(0)
+        removeobject(9)
+        setflag(FLAG_UNUSED_0x496)
+        setflag(FLAG_UNUSED_0x497)
+    release
+    end
+}
+
+text May_Intro{
+    "You've made a huge mistake!"
+}
+
+text May_Outro{
+    "I've made a huge mistake?"
+}
+
+text PostBattle_May{
+    format("You're pretty good. With my help you could be the best.")
 }

@@ -440,7 +440,7 @@ LittlerootTown_NewLab_EventScript_Dreepy_4:
 # 205 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 206 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 207 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 208 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -455,7 +455,7 @@ LittlerootTown_NewLab_EventScript_Dreepy_5:
 # 213 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 214 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 215 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 216 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -500,7 +500,7 @@ LittlerootTown_NewLab_EventScript_Impidimp_4:
 # 238 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 239 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 240 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 241 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -515,7 +515,7 @@ LittlerootTown_NewLab_EventScript_Impidimp_5:
 # 246 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 247 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 248 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 249 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -560,7 +560,7 @@ LittlerootTown_NewLab_EventScript_Tinkatink_4:
 # 271 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 272 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 273 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 274 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -575,7 +575,7 @@ LittlerootTown_NewLab_EventScript_Tinkatink_5:
 # 279 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 280 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x494
 # 281 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 282 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -620,7 +620,7 @@ LittlerootTown_NewLab_EventScript_Solosis_4:
 # 304 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 305 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 306 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 307 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -635,7 +635,7 @@ LittlerootTown_NewLab_EventScript_Solosis_5:
 # 312 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 313 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 314 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 315 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -680,7 +680,7 @@ LittlerootTown_NewLab_EventScript_Riolu_4:
 # 337 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 338 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 339 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 340 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -695,7 +695,7 @@ LittlerootTown_NewLab_EventScript_Riolu_5:
 # 345 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 346 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 347 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 348 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -740,7 +740,7 @@ LittlerootTown_NewLab_EventScript_Jangmo_O_4:
 # 370 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 371 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 372 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 373 "data/maps/LittlerootTown_NewLab/scripts.pory"
@@ -755,7 +755,7 @@ LittlerootTown_NewLab_EventScript_Jangmo_O_5:
 # 378 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
 # 379 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setflag FLAG_UNUSED_0x495
 # 380 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 381 "data/maps/LittlerootTown_NewLab/scripts.pory"
