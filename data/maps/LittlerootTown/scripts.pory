@@ -1037,7 +1037,7 @@ script LittlerootTown_EventScript_NewLabSign {
 }
 
 script LittlerootTown_EventScript_SetupRivalBattle{
-    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
         setflag(FLAG_UNUSED_0x496)
     }
     else{
@@ -1045,10 +1045,50 @@ script LittlerootTown_EventScript_SetupRivalBattle{
     }
 }
 
-script LittlerootTown_EventScript_MayRivalBattle{
+script LittlerootTown_EventScript_RivalTrigger1{
+    lockall
+    addvar(VAR_UNUSED_0x40F9, 1)
+    faceplayer
+    applymovement(9, moves(walk_right * 6))
+    msgbox(May_Intro)
+    call(LittlerootTown_EventScript_MayRivalBattle)
+    goto(LittlerootTown_EventScript_MayLeaveTown)
+}
 
-        trainerbattle_single(TRAINER_MAY_ROUTE_103_TREECKO, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
-    end
+script LittlerootTown_EventScript_RivalTrigger2{
+    lockall
+    addvar(VAR_UNUSED_0x40F9, 1)
+    faceplayer
+    applymovement(9, moves(
+        walk_down
+        walk_right * 7))
+    msgbox(May_Intro)
+    call(LittlerootTown_EventScript_MayRivalBattle)
+    goto(LittlerootTown_EventScript_MayLeaveTown)
+}
+
+script LittlerootTown_EventScript_MayRivalBattle{
+    switch (var(VAR_UNUSED_0x40F8)){
+        case 0: call(LittlerootTown_EventScript_MayTreeckoBattle)
+        case 1: call(LittlerootTown_EventScript_MayTorchicBattle)
+        case 2: call(LittlerootTown_EventScript_MayMudkipBattle)
+    }
+    return
+}
+
+script LittlerootTown_EventScript_MayMudkipBattle{
+    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_MUDKIP, May_Outro)
+    return
+}
+
+script LittlerootTown_EventScript_MayTreeckoBattle{
+    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, May_Outro)
+    return
+}
+
+script LittlerootTown_EventScript_MayTorchicBattle{
+    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TORCHIC, May_Outro)
+    return
 }
 
 script LittlerootTown_EventScript_MayLeaveTown{
@@ -1056,14 +1096,13 @@ script LittlerootTown_EventScript_MayLeaveTown{
     closemessage
     lock
         applymovement(9, moves(
-            walk_down
             walk_left * 12
         ))
         waitmovement(0)
         removeobject(9)
         setflag(FLAG_UNUSED_0x496)
         setflag(FLAG_UNUSED_0x497)
-    release
+    releaseall
     end
 }
 

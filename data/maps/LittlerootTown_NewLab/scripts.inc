@@ -6,7 +6,7 @@ LittlerootTown_NewLab_MapScripts::
 
 LittlerootTown_NewLab_EventScript_BallDefault::
 # 6 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F7, 0
+	setvar STARTER_REGION, 0
 	return
 
 
@@ -16,7 +16,7 @@ LittlerootTown_NewLab_EventScript_Birch::
 # 11 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	faceplayer
 # 12 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x493, LittlerootTown_NewLab_EventScript_Birch_4
+	goto_if_unset STARTER_BALL_ONE, LittlerootTown_NewLab_EventScript_Birch_4
 LittlerootTown_NewLab_EventScript_Birch_3:
 # 28 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox LittlerootTown_NewLab_EventScript_Birch_Text_2
@@ -39,20 +39,20 @@ LittlerootTown_NewLab_EventScript_Birch_2:
 
 LittlerootTown_NewLab_EventScript_Birch_4:
 # 12 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x494, LittlerootTown_NewLab_EventScript_Birch_6
+	goto_if_unset STARTER_BALL_TWO, LittlerootTown_NewLab_EventScript_Birch_6
 	goto LittlerootTown_NewLab_EventScript_Birch_3
 
 LittlerootTown_NewLab_EventScript_Birch_6:
 # 12 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x495, LittlerootTown_NewLab_EventScript_Birch_2
+	goto_if_unset STARTER_BALL_THREE, LittlerootTown_NewLab_EventScript_Birch_2
 	goto LittlerootTown_NewLab_EventScript_Birch_3
 
 LittlerootTown_NewLab_EventScript_Birch_9:
 # 15 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare STARTER_REGION, 2
 	goto_if_ne LittlerootTown_NewLab_EventScript_Birch_13
 # 19 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F7, 0
+	setvar STARTER_REGION, 0
 LittlerootTown_NewLab_EventScript_Birch_12:
 # 21 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox LittlerootTown_NewLab_EventScript_Birch_Text_1
@@ -60,7 +60,7 @@ LittlerootTown_NewLab_EventScript_Birch_12:
 
 LittlerootTown_NewLab_EventScript_Birch_13:
 # 16 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	addvar VAR_UNUSED_0x40F7, 1
+	addvar STARTER_REGION, 1
 	goto LittlerootTown_NewLab_EventScript_Birch_12
 
 
@@ -68,7 +68,7 @@ LittlerootTown_NewLab_EventScript_PokeballOne::
 # 36 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	lockall
 # 37 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x493, LittlerootTown_NewLab_EventScript_PokeballOne_4
+	goto_if_unset STARTER_BALL_ONE, LittlerootTown_NewLab_EventScript_PokeballOne_4
 LittlerootTown_NewLab_EventScript_PokeballOne_3:
 # 49 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox LittlerootTown_NewLab_EventScript_PokeballOne_Text_0
@@ -81,39 +81,39 @@ LittlerootTown_NewLab_EventScript_PokeballOne_1:
 
 LittlerootTown_NewLab_EventScript_PokeballOne_2:
 # 38 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare STARTER_REGION, 0
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballOne_9
 # 41 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare STARTER_REGION, 1
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballOne_10
 # 44 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare STARTER_REGION, 2
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballOne_11
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_1
 
 LittlerootTown_NewLab_EventScript_PokeballOne_4:
 # 37 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x494, LittlerootTown_NewLab_EventScript_PokeballOne_6
+	goto_if_unset STARTER_BALL_TWO, LittlerootTown_NewLab_EventScript_PokeballOne_6
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_3
 
 LittlerootTown_NewLab_EventScript_PokeballOne_6:
 # 37 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x495, LittlerootTown_NewLab_EventScript_PokeballOne_2
+	goto_if_unset STARTER_BALL_THREE, LittlerootTown_NewLab_EventScript_PokeballOne_2
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_3
 
 LittlerootTown_NewLab_EventScript_PokeballOne_9:
 # 39 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Pawniard
+	call LittlerootTown_NewLab_EventScript_ROWLET
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_1
 
 LittlerootTown_NewLab_EventScript_PokeballOne_10:
 # 42 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Litwick
+	call LittlerootTown_NewLab_EventScript_CHESPIN
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_1
 
 LittlerootTown_NewLab_EventScript_PokeballOne_11:
 # 45 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Tynamo
+	call LittlerootTown_NewLab_EventScript_BULBASAUR
 	goto LittlerootTown_NewLab_EventScript_PokeballOne_1
 
 
@@ -121,7 +121,7 @@ LittlerootTown_NewLab_EventScript_PokeballTwo::
 # 57 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	lockall
 # 58 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x493, LittlerootTown_NewLab_EventScript_PokeballTwo_4
+	goto_if_unset STARTER_BALL_ONE, LittlerootTown_NewLab_EventScript_PokeballTwo_4
 LittlerootTown_NewLab_EventScript_PokeballTwo_3:
 # 70 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox LittlerootTown_NewLab_EventScript_PokeballOne_Text_0
@@ -134,39 +134,39 @@ LittlerootTown_NewLab_EventScript_PokeballTwo_1:
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_2:
 # 59 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare STARTER_REGION, 0
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballTwo_9
 # 62 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare STARTER_REGION, 1
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballTwo_10
 # 65 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare STARTER_REGION, 2
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballTwo_11
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_1
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_4:
 # 58 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x494, LittlerootTown_NewLab_EventScript_PokeballTwo_6
+	goto_if_unset STARTER_BALL_TWO, LittlerootTown_NewLab_EventScript_PokeballTwo_6
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_3
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_6:
 # 58 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x495, LittlerootTown_NewLab_EventScript_PokeballTwo_2
+	goto_if_unset STARTER_BALL_THREE, LittlerootTown_NewLab_EventScript_PokeballTwo_2
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_3
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_9:
 # 60 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Dreepy
+	call LittlerootTown_NewLab_EventScript_LITTEN
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_1
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_10:
 # 63 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Impidimp
+	call LittlerootTown_NewLab_EventScript_FENNEKIN
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_1
 
 LittlerootTown_NewLab_EventScript_PokeballTwo_11:
 # 66 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Tinkatink
+	call LittlerootTown_NewLab_EventScript_CHARMANDER
 	goto LittlerootTown_NewLab_EventScript_PokeballTwo_1
 
 
@@ -174,7 +174,7 @@ LittlerootTown_NewLab_EventScript_PokeballThree::
 # 78 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	lockall
 # 79 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x493, LittlerootTown_NewLab_EventScript_PokeballThree_4
+	goto_if_unset STARTER_BALL_ONE, LittlerootTown_NewLab_EventScript_PokeballThree_4
 LittlerootTown_NewLab_EventScript_PokeballThree_3:
 # 91 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox LittlerootTown_NewLab_EventScript_PokeballOne_Text_0
@@ -187,615 +187,651 @@ LittlerootTown_NewLab_EventScript_PokeballThree_1:
 
 LittlerootTown_NewLab_EventScript_PokeballThree_2:
 # 80 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 0
+	compare STARTER_REGION, 0
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballThree_9
 # 83 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 1
+	compare STARTER_REGION, 1
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballThree_10
 # 86 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_UNUSED_0x40F7, 2
+	compare STARTER_REGION, 2
 	goto_if_eq LittlerootTown_NewLab_EventScript_PokeballThree_11
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_1
 
 LittlerootTown_NewLab_EventScript_PokeballThree_4:
 # 79 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x494, LittlerootTown_NewLab_EventScript_PokeballThree_6
+	goto_if_unset STARTER_BALL_TWO, LittlerootTown_NewLab_EventScript_PokeballThree_6
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_3
 
 LittlerootTown_NewLab_EventScript_PokeballThree_6:
 # 79 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x495, LittlerootTown_NewLab_EventScript_PokeballThree_2
+	goto_if_unset STARTER_BALL_THREE, LittlerootTown_NewLab_EventScript_PokeballThree_2
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_3
 
 LittlerootTown_NewLab_EventScript_PokeballThree_9:
 # 81 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Solosis
+	call LittlerootTown_NewLab_EventScript_POPPLIO
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_1
 
 LittlerootTown_NewLab_EventScript_PokeballThree_10:
 # 84 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Riolu
+	call LittlerootTown_NewLab_EventScript_FROAKIE
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_1
 
 LittlerootTown_NewLab_EventScript_PokeballThree_11:
 # 87 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call LittlerootTown_NewLab_EventScript_Jangmo_O
+	call LittlerootTown_NewLab_EventScript_SQUIRTLE
 	goto LittlerootTown_NewLab_EventScript_PokeballThree_1
 
 
-LittlerootTown_NewLab_EventScript_Pawniard::
+LittlerootTown_NewLab_EventScript_ROWLET::
 # 99 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_PAWNIARD, 10, 3
+	showmonpic SPECIES_ROWLET, 10, 3
 # 100 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_0, MSGBOX_YESNO
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_0, MSGBOX_YESNO
 # 101 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Pawniard_1
-# 125 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	goto_if_eq LittlerootTown_NewLab_EventScript_ROWLET_1
+# 127 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 126 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 128 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Pawniard_1:
+LittlerootTown_NewLab_EventScript_ROWLET_1:
 # 102 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_PAWNIARD, 5, isShiny = YES
+	givemon SPECIES_ROWLET, 10, isShiny = YES
 # 103 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Pawniard_4
-# 111 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Pawniard_5
-# 120 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 121 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
-	return
-
-LittlerootTown_NewLab_EventScript_Pawniard_4:
+	setvar VAR_UNUSED_0x40F8, 0
 # 104 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setvar VAR_UNUSED_0x40F9, 1
 # 105 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_1
-# 106 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 1
-# 107 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
-# 108 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 109 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknamePartyMon
-	return
-
-LittlerootTown_NewLab_EventScript_Pawniard_5:
-# 112 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_ROWLET_4
 # 113 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_1
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_ROWLET_5
+# 122 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 123 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_ROWLET_4:
+# 106 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 107 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_1
+# 108 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 1
+# 109 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 110 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 111 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknamePartyMon
+	return
+
+LittlerootTown_NewLab_EventScript_ROWLET_5:
 # 114 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 1
+	playfanfare MUS_OBTAIN_ITEM
 # 115 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_1
 # 116 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	removeobject 1
 # 117 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 118 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 119 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
-LittlerootTown_NewLab_EventScript_Litwick::
-# 132 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_LITWICK, 10, 3
-# 133 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Litwick_Text_0, MSGBOX_YESNO
+LittlerootTown_NewLab_EventScript_CHESPIN::
 # 134 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Litwick_1
-# 158 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 159 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Litwick_1:
+	showmonpic SPECIES_CHESPIN, 10, 3
 # 135 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_LITWICK, 5, isShiny = YES
+	msgbox LittlerootTown_NewLab_EventScript_CHESPIN_Text_0, MSGBOX_YESNO
 # 136 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Litwick_4
-# 144 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Litwick_5
-# 153 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHESPIN_1
+# 162 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 154 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
+# 163 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Litwick_4:
+LittlerootTown_NewLab_EventScript_CHESPIN_1:
 # 137 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	givemon SPECIES_CHESPIN, 10, isShiny = YES
 # 138 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Litwick_Text_1
+	setvar VAR_UNUSED_0x40F8, 0
 # 139 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 1
+	setvar VAR_UNUSED_0x40F9, 1
 # 140 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
-# 141 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 142 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknamePartyMon
-	return
-
-LittlerootTown_NewLab_EventScript_Litwick_5:
-# 145 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 146 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Litwick_Text_1
-# 147 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 1
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHESPIN_4
 # 148 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHESPIN_5
+# 157 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 158 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_CHESPIN_4:
+# 141 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 142 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_CHESPIN_Text_1
+# 143 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 1
+# 144 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 145 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 146 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknamePartyMon
+	return
+
+LittlerootTown_NewLab_EventScript_CHESPIN_5:
 # 149 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	playfanfare MUS_OBTAIN_ITEM
 # 150 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_CHESPIN_Text_1
+# 151 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 1
+# 152 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 153 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 154 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
-LittlerootTown_NewLab_EventScript_Tynamo::
-# 165 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_TYNAMO, 10, 3
-# 166 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tynamo_Text_0, MSGBOX_YESNO
-# 167 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tynamo_1
-# 191 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 192 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Tynamo_1:
-# 168 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_TYNAMO, 5, isShiny = YES
+LittlerootTown_NewLab_EventScript_BULBASAUR::
 # 169 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tynamo_4
-# 177 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tynamo_5
-# 186 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_BULBASAUR, 10, 3
+# 170 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_BULBASAUR_Text_0, MSGBOX_YESNO
+# 171 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittlerootTown_NewLab_EventScript_BULBASAUR_1
+# 197 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 187 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
+# 198 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Tynamo_4:
-# 170 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 171 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tynamo_Text_1
+LittlerootTown_NewLab_EventScript_BULBASAUR_1:
 # 172 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 1
+	givemon SPECIES_BULBASAUR, 10, isShiny = YES
 # 173 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
+	setvar VAR_UNUSED_0x40F8, 0
 # 174 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	setvar VAR_UNUSED_0x40F9, 1
 # 175 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_BULBASAUR_4
+# 183 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_BULBASAUR_5
+# 192 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 193 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_BULBASAUR_4:
+# 176 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 177 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_BULBASAUR_Text_1
+# 178 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 1
+# 179 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 180 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 181 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknamePartyMon
 	return
 
-LittlerootTown_NewLab_EventScript_Tynamo_5:
-# 178 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_BULBASAUR_5:
+# 184 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 179 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tynamo_Text_1
-# 180 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 185 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_BULBASAUR_Text_1
+# 186 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 1
-# 181 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x493
-# 182 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 187 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_ONE
+# 188 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 183 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 189 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
-LittlerootTown_NewLab_EventScript_Dreepy::
-# 198 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_DREEPY, 10, 3
-# 199 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Dreepy_Text_0, MSGBOX_YESNO
-# 200 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_LITTEN::
+# 204 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_LITTEN, 10, 3
+# 205 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_LITTEN_Text_0, MSGBOX_YESNO
+# 206 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Dreepy_1
-# 224 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	goto_if_eq LittlerootTown_NewLab_EventScript_LITTEN_1
+# 232 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 225 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 233 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Dreepy_1:
-# 201 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_DREEPY, 5, isShiny = YES
-# 202 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Dreepy_4
-# 210 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Dreepy_5
-# 219 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 220 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
-	return
-
-LittlerootTown_NewLab_EventScript_Dreepy_4:
-# 203 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 204 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Dreepy_Text_1
-# 205 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 2
-# 206 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
+LittlerootTown_NewLab_EventScript_LITTEN_1:
 # 207 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	givemon SPECIES_LITTEN, 10, isShiny = YES
 # 208 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknamePartyMon
+	setvar VAR_UNUSED_0x40F8, 1
+# 209 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 210 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_LITTEN_4
+# 218 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_LITTEN_5
+# 227 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 228 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
 	return
 
-LittlerootTown_NewLab_EventScript_Dreepy_5:
+LittlerootTown_NewLab_EventScript_LITTEN_4:
 # 211 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 212 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Dreepy_Text_1
+	msgbox LittlerootTown_NewLab_EventScript_LITTEN_Text_1
 # 213 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
 # 214 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
+	setflag STARTER_BALL_TWO
 # 215 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 216 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknamePartyMon
+	return
+
+LittlerootTown_NewLab_EventScript_LITTEN_5:
+# 219 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 220 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_LITTEN_Text_1
+# 221 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 2
+# 222 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_TWO
+# 223 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 224 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
-LittlerootTown_NewLab_EventScript_Impidimp::
-# 231 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_IMPIDIMP, 10, 3
-# 232 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Impidimp_Text_0, MSGBOX_YESNO
-# 233 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Impidimp_1
-# 257 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 258 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Impidimp_1:
-# 234 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_IMPIDIMP, 5, isShiny = YES
-# 235 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Impidimp_4
-# 243 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Impidimp_5
-# 252 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 253 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
-	return
-
-LittlerootTown_NewLab_EventScript_Impidimp_4:
-# 236 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 237 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Impidimp_Text_1
-# 238 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 2
+LittlerootTown_NewLab_EventScript_FENNEKIN::
 # 239 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
+	showmonpic SPECIES_FENNEKIN, 10, 3
 # 240 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	msgbox LittlerootTown_NewLab_EventScript_FENNEKIN_Text_0, MSGBOX_YESNO
 # 241 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknamePartyMon
-	return
-
-LittlerootTown_NewLab_EventScript_Impidimp_5:
-# 244 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 245 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Impidimp_Text_1
-# 246 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 2
-# 247 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
-# 248 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 249 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknameBoxMon
-	return
-
-
-LittlerootTown_NewLab_EventScript_Tinkatink::
-# 264 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_TINKATINK, 10, 3
-# 265 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tinkatink_Text_0, MSGBOX_YESNO
-# 266 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tinkatink_1
-# 290 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 291 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Tinkatink_1:
+	goto_if_eq LittlerootTown_NewLab_EventScript_FENNEKIN_1
 # 267 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_TINKATINK, 5, isShiny = YES
+	hidemonpic
 # 268 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tinkatink_4
-# 276 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Tinkatink_5
-# 285 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 286 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
+	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Tinkatink_4:
-# 269 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_FENNEKIN_1:
+# 242 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	givemon SPECIES_FENNEKIN, 10, isShiny = YES
+# 243 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F8, 1
+# 244 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 245 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_FENNEKIN_4
+# 253 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_FENNEKIN_5
+# 262 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 263 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_FENNEKIN_4:
+# 246 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 270 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tinkatink_Text_1
-# 271 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 247 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_FENNEKIN_Text_1
+# 248 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 2
-# 272 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
-# 273 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 249 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_TWO
+# 250 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
+# 251 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknamePartyMon
+	return
+
+LittlerootTown_NewLab_EventScript_FENNEKIN_5:
+# 254 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 255 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_FENNEKIN_Text_1
+# 256 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 2
+# 257 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_TWO
+# 258 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 259 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknameBoxMon
+	return
+
+
+LittlerootTown_NewLab_EventScript_CHARMANDER::
 # 274 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknamePartyMon
-	return
-
-LittlerootTown_NewLab_EventScript_Tinkatink_5:
-# 277 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 278 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Tinkatink_Text_1
-# 279 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 2
-# 280 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x494
-# 281 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 282 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknameBoxMon
-	return
-
-
-LittlerootTown_NewLab_EventScript_Solosis::
-# 297 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_SOLOSIS, 10, 3
-# 298 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Solosis_Text_0, MSGBOX_YESNO
-# 299 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_CHARMANDER, 10, 3
+# 275 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_CHARMANDER_Text_0, MSGBOX_YESNO
+# 276 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Solosis_1
-# 323 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 324 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Solosis_1:
-# 300 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_SOLOSIS, 5, isShiny = YES
-# 301 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Solosis_4
-# 309 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Solosis_5
-# 318 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 319 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
-	return
-
-LittlerootTown_NewLab_EventScript_Solosis_4:
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHARMANDER_1
 # 302 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	hidemonpic
 # 303 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Solosis_Text_1
-# 304 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 3
-# 305 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 306 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox NewLab_NotChosen
+	return
+
+LittlerootTown_NewLab_EventScript_CHARMANDER_1:
+# 277 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	givemon SPECIES_CHARMANDER, 10, isShiny = YES
+# 278 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F8, 1
+# 279 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 280 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHARMANDER_4
+# 288 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_CHARMANDER_5
+# 297 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 298 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_CHARMANDER_4:
+# 281 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 282 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_CHARMANDER_Text_1
+# 283 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 2
+# 284 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_TWO
+# 285 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 307 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 286 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknamePartyMon
 	return
 
-LittlerootTown_NewLab_EventScript_Solosis_5:
+LittlerootTown_NewLab_EventScript_CHARMANDER_5:
+# 289 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 290 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_CHARMANDER_Text_1
+# 291 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 2
+# 292 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_TWO
+# 293 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 294 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknameBoxMon
+	return
+
+
+LittlerootTown_NewLab_EventScript_POPPLIO::
+# 309 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_POPPLIO, 10, 3
 # 310 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox LittlerootTown_NewLab_EventScript_POPPLIO_Text_0, MSGBOX_YESNO
 # 311 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Solosis_Text_1
-# 312 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 3
-# 313 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 314 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 315 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	call NicknameBoxMon
-	return
-
-
-LittlerootTown_NewLab_EventScript_Riolu::
-# 330 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_RIOLU, 10, 3
-# 331 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Riolu_Text_0, MSGBOX_YESNO
-# 332 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Riolu_1
-# 356 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 357 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox NewLab_NotChosen
-	return
-
-LittlerootTown_NewLab_EventScript_Riolu_1:
-# 333 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_RIOLU, 5, isShiny = YES
-# 334 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Riolu_4
-# 342 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Riolu_5
-# 351 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	hidemonpic
-# 352 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
-	return
-
-LittlerootTown_NewLab_EventScript_Riolu_4:
-# 335 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 336 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Riolu_Text_1
+	goto_if_eq LittlerootTown_NewLab_EventScript_POPPLIO_1
 # 337 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	removeobject 3
+	hidemonpic
 # 338 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 339 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox NewLab_NotChosen
+	return
+
+LittlerootTown_NewLab_EventScript_POPPLIO_1:
+# 312 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	givemon SPECIES_POPPLIO, 10, isShiny = YES
+# 313 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F8, 2
+# 314 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 315 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_POPPLIO_4
+# 323 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_POPPLIO_5
+# 332 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 333 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_POPPLIO_4:
+# 316 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 317 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_POPPLIO_Text_1
+# 318 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 3
+# 319 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 320 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 340 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 321 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknamePartyMon
 	return
 
-LittlerootTown_NewLab_EventScript_Riolu_5:
-# 343 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_POPPLIO_5:
+# 324 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 344 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Riolu_Text_1
-# 345 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 325 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_POPPLIO_Text_1
+# 326 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
-# 346 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 347 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 327 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 328 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 348 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 329 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
-LittlerootTown_NewLab_EventScript_Jangmo_O::
-# 363 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	showmonpic SPECIES_JANGMO_O, 10, 3
-# 364 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Jangmo_O_Text_0, MSGBOX_YESNO
-# 365 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_FROAKIE::
+# 344 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_FROAKIE, 10, 3
+# 345 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_FROAKIE_Text_0, MSGBOX_YESNO
+# 346 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_NewLab_EventScript_Jangmo_O_1
-# 389 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	goto_if_eq LittlerootTown_NewLab_EventScript_FROAKIE_1
+# 372 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 390 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 373 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NewLab_NotChosen
 	return
 
-LittlerootTown_NewLab_EventScript_Jangmo_O_1:
-# 366 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	givemon SPECIES_JANGMO_O, 5, isShiny = YES
-# 367 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_FROAKIE_1:
+# 347 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	givemon SPECIES_FROAKIE, 10, isShiny = YES
+# 348 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F8, 2
+# 349 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 350 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittlerootTown_NewLab_EventScript_Jangmo_O_4
-# 375 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	goto_if_eq LittlerootTown_NewLab_EventScript_FROAKIE_4
+# 358 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittlerootTown_NewLab_EventScript_Jangmo_O_5
-# 384 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	goto_if_eq LittlerootTown_NewLab_EventScript_FROAKIE_5
+# 367 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 385 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Pawniard_Text_2
+# 368 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
 	return
 
-LittlerootTown_NewLab_EventScript_Jangmo_O_4:
-# 368 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_FROAKIE_4:
+# 351 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 369 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Jangmo_O_Text_1
-# 370 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 352 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_FROAKIE_Text_1
+# 353 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
-# 371 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 372 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 354 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 355 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 373 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 356 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknamePartyMon
 	return
 
-LittlerootTown_NewLab_EventScript_Jangmo_O_5:
-# 376 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_FROAKIE_5:
+# 359 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 377 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	msgbox LittlerootTown_NewLab_EventScript_Jangmo_O_Text_1
-# 378 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 360 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_FROAKIE_Text_1
+# 361 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	removeobject 3
-# 379 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 380 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 362 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 363 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
+# 364 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknameBoxMon
+	return
+
+
+LittlerootTown_NewLab_EventScript_SQUIRTLE::
+# 379 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	showmonpic SPECIES_SQUIRTLE, 10, 3
+# 380 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_SQUIRTLE_Text_0, MSGBOX_YESNO
 # 381 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittlerootTown_NewLab_EventScript_SQUIRTLE_1
+# 407 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 408 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox NewLab_NotChosen
+	return
+
+LittlerootTown_NewLab_EventScript_SQUIRTLE_1:
+# 382 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	givemon SPECIES_SQUIRTLE, 10, isShiny = YES
+# 383 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F8, 2
+# 384 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setvar VAR_UNUSED_0x40F9, 1
+# 385 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittlerootTown_NewLab_EventScript_SQUIRTLE_4
+# 393 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittlerootTown_NewLab_EventScript_SQUIRTLE_5
+# 402 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	hidemonpic
+# 403 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_ROWLET_Text_2
+	return
+
+LittlerootTown_NewLab_EventScript_SQUIRTLE_4:
+# 386 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 387 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_SQUIRTLE_Text_1
+# 388 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 3
+# 389 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 390 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 391 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	call NicknamePartyMon
+	return
+
+LittlerootTown_NewLab_EventScript_SQUIRTLE_5:
+# 394 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 395 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	msgbox LittlerootTown_NewLab_EventScript_SQUIRTLE_Text_1
+# 396 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	removeobject 3
+# 397 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag STARTER_BALL_THREE
+# 398 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 399 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call NicknameBoxMon
 	return
 
 
 NicknamePartyMon::
-# 397 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 415 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 398 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 416 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 399 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 417 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 400 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 418 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 401 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 419 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 407 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 425 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 408 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 426 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	hidemonpic
-# 409 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 427 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 412 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 430 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 410 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 428 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
@@ -810,96 +846,96 @@ LittlerootTown_NewLab_EventScript_Birch_Text_1:
 
 LittlerootTown_NewLab_EventScript_Birch_Text_2:
 # 28 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Take care of your Pokemon!$"
+	.string "You chose... Wisely.$"
 
 LittlerootTown_NewLab_EventScript_PokeballOne_Text_0:
 # 49 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "Don't take another!$"
 
-LittlerootTown_NewLab_EventScript_Pawniard_Text_0:
+LittlerootTown_NewLab_EventScript_ROWLET_Text_0:
 # 100 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Pawniard?$"
+	.string "Do you want to choose ROWLET?$"
 
-LittlerootTown_NewLab_EventScript_Pawniard_Text_1:
-# 105 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Pawniard!$"
+LittlerootTown_NewLab_EventScript_ROWLET_Text_1:
+# 107 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received ROWLET!$"
 
-LittlerootTown_NewLab_EventScript_Pawniard_Text_2:
-# 121 "data/maps/LittlerootTown_NewLab/scripts.pory"
+LittlerootTown_NewLab_EventScript_ROWLET_Text_2:
+# 123 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "No more room$"
 
-LittlerootTown_NewLab_EventScript_Litwick_Text_0:
-# 133 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Litwick?$"
+LittlerootTown_NewLab_EventScript_CHESPIN_Text_0:
+# 135 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose CHESPIN?$"
 
-LittlerootTown_NewLab_EventScript_Litwick_Text_1:
-# 138 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Litwick!$"
+LittlerootTown_NewLab_EventScript_CHESPIN_Text_1:
+# 142 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received CHESPIN!$"
 
-LittlerootTown_NewLab_EventScript_Tynamo_Text_0:
-# 166 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Tynamo?$"
+LittlerootTown_NewLab_EventScript_BULBASAUR_Text_0:
+# 170 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose BULBASAUR?$"
 
-LittlerootTown_NewLab_EventScript_Tynamo_Text_1:
-# 171 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Tynamo!$"
+LittlerootTown_NewLab_EventScript_BULBASAUR_Text_1:
+# 177 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received BULBASAUR!$"
 
-LittlerootTown_NewLab_EventScript_Dreepy_Text_0:
-# 199 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Dreepy?$"
+LittlerootTown_NewLab_EventScript_LITTEN_Text_0:
+# 205 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose LITTEN?$"
 
-LittlerootTown_NewLab_EventScript_Dreepy_Text_1:
-# 204 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Dreepy!$"
+LittlerootTown_NewLab_EventScript_LITTEN_Text_1:
+# 212 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received LITTEN!$"
 
-LittlerootTown_NewLab_EventScript_Impidimp_Text_0:
-# 232 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Impidimp?$"
+LittlerootTown_NewLab_EventScript_FENNEKIN_Text_0:
+# 240 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose FENNEKIN?$"
 
-LittlerootTown_NewLab_EventScript_Impidimp_Text_1:
-# 237 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Impidimp!$"
+LittlerootTown_NewLab_EventScript_FENNEKIN_Text_1:
+# 247 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received FENNEKIN!$"
 
-LittlerootTown_NewLab_EventScript_Tinkatink_Text_0:
-# 265 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Tinkatink?$"
+LittlerootTown_NewLab_EventScript_CHARMANDER_Text_0:
+# 275 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose CHARMANDER?$"
 
-LittlerootTown_NewLab_EventScript_Tinkatink_Text_1:
-# 270 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Tinkatink!$"
+LittlerootTown_NewLab_EventScript_CHARMANDER_Text_1:
+# 282 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received CHARMANDER!$"
 
-LittlerootTown_NewLab_EventScript_Solosis_Text_0:
-# 298 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Solosis?$"
+LittlerootTown_NewLab_EventScript_POPPLIO_Text_0:
+# 310 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose POPPLIO?$"
 
-LittlerootTown_NewLab_EventScript_Solosis_Text_1:
-# 303 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Solosis!$"
+LittlerootTown_NewLab_EventScript_POPPLIO_Text_1:
+# 317 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received POPPLIO!$"
 
-LittlerootTown_NewLab_EventScript_Riolu_Text_0:
-# 331 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Riolu?$"
+LittlerootTown_NewLab_EventScript_FROAKIE_Text_0:
+# 345 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose FROAKIE?$"
 
-LittlerootTown_NewLab_EventScript_Riolu_Text_1:
-# 336 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Riolu!$"
+LittlerootTown_NewLab_EventScript_FROAKIE_Text_1:
+# 352 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received FROAKIE!$"
 
-LittlerootTown_NewLab_EventScript_Jangmo_O_Text_0:
-# 364 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "Do you want to choose Jangmo-o?$"
+LittlerootTown_NewLab_EventScript_SQUIRTLE_Text_0:
+# 380 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "Do you want to choose Squirtle?$"
 
-LittlerootTown_NewLab_EventScript_Jangmo_O_Text_1:
-# 369 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	.string "You received Jangmo-o!$"
+LittlerootTown_NewLab_EventScript_SQUIRTLE_Text_1:
+# 387 "data/maps/LittlerootTown_NewLab/scripts.pory"
+	.string "You received Squirtle!$"
 
 NicknamePartyMon_Text_0:
-# 397 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 415 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "Give it a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 412 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 430 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "Pokemon sent to PC$"
 
 NewLab_NotChosen::
-# 416 "data/maps/LittlerootTown_NewLab/scripts.pory"
+# 434 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	.string "You did not choose the Pokemon$"

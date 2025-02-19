@@ -3,20 +3,20 @@ mapscripts LittlerootTown_NewLab_MapScripts {
 }
 
 script LittlerootTown_NewLab_EventScript_BallDefault{
-    setvar(VAR_UNUSED_0x40F7, 0)
+    setvar(STARTER_REGION, 0)
 }
 
 script LittlerootTown_NewLab_EventScript_Birch{
     lockall
     faceplayer
-    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
         msgbox("Hello, would you like to see more options?", MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES){
-            if(var(VAR_UNUSED_0x40F7) != 2){
-                addvar(VAR_UNUSED_0x40F7, 1)
+            if(var(STARTER_REGION) != 2){
+                addvar(STARTER_REGION, 1)
             }
             else{
-                setvar(VAR_UNUSED_0x40F7, 0)
+                setvar(STARTER_REGION, 0)
             }
             msgbox("Choose your starter wisely.")
         }
@@ -25,7 +25,7 @@ script LittlerootTown_NewLab_EventScript_Birch{
         }
     }
     else{
-        msgbox("Take care of your Pokemon!")
+        msgbox("You chose... Wisely.")
     }
     waitmessage
     releaseall
@@ -34,15 +34,15 @@ script LittlerootTown_NewLab_EventScript_Birch{
 
 script LittlerootTown_NewLab_EventScript_PokeballOne{
     lockall
-    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
-            call(LittlerootTown_NewLab_EventScript_Pawniard)
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
+        if(var(STARTER_REGION) == 0){
+            call(LittlerootTown_NewLab_EventScript_ROWLET)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(LittlerootTown_NewLab_EventScript_Litwick)
+        elif(var(STARTER_REGION) == 1){
+            call(LittlerootTown_NewLab_EventScript_CHESPIN)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(LittlerootTown_NewLab_EventScript_Tynamo)
+        elif(var(STARTER_REGION) == 2){
+            call(LittlerootTown_NewLab_EventScript_BULBASAUR)
         }
     }
     else{
@@ -55,15 +55,15 @@ script LittlerootTown_NewLab_EventScript_PokeballOne{
 
 script LittlerootTown_NewLab_EventScript_PokeballTwo{
     lockall
-    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
-            call(LittlerootTown_NewLab_EventScript_Dreepy)
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
+        if(var(STARTER_REGION) == 0){
+            call(LittlerootTown_NewLab_EventScript_LITTEN)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(LittlerootTown_NewLab_EventScript_Impidimp)
+        elif(var(STARTER_REGION) == 1){
+            call(LittlerootTown_NewLab_EventScript_FENNEKIN)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(LittlerootTown_NewLab_EventScript_Tinkatink)
+        elif(var(STARTER_REGION) == 2){
+            call(LittlerootTown_NewLab_EventScript_CHARMANDER)
         }
     }
     else{
@@ -76,15 +76,15 @@ script LittlerootTown_NewLab_EventScript_PokeballTwo{
 
 script LittlerootTown_NewLab_EventScript_PokeballThree{
     lockall
-    if(!(flag(FLAG_UNUSED_0x493) || flag(FLAG_UNUSED_0x494) || flag(FLAG_UNUSED_0x495))){
-        if(var(VAR_UNUSED_0x40F7) == 0){
-            call(LittlerootTown_NewLab_EventScript_Solosis)
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
+        if(var(STARTER_REGION) == 0){
+            call(LittlerootTown_NewLab_EventScript_POPPLIO)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(LittlerootTown_NewLab_EventScript_Riolu)
+        elif(var(STARTER_REGION) == 1){
+            call(LittlerootTown_NewLab_EventScript_FROAKIE)
         }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(LittlerootTown_NewLab_EventScript_Jangmo_O)
+        elif(var(STARTER_REGION) == 2){
+            call(LittlerootTown_NewLab_EventScript_SQUIRTLE)
         }
     }
     else{
@@ -95,24 +95,26 @@ script LittlerootTown_NewLab_EventScript_PokeballThree{
     end
 }
 
-script LittlerootTown_NewLab_EventScript_Pawniard {
-    showmonpic(SPECIES_PAWNIARD, 10,3)
-    msgbox("Do you want to choose Pawniard?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_ROWLET {
+    showmonpic(SPECIES_ROWLET, 10,3)
+    msgbox("Do you want to choose ROWLET?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_PAWNIARD, 5, isShiny=YES)
+        givemon(SPECIES_ROWLET, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 0)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Pawniard!")
+            msgbox("You received ROWLET!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Pawniard!")
+            msgbox("You received ROWLET!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -128,24 +130,26 @@ script LittlerootTown_NewLab_EventScript_Pawniard {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Litwick {
-    showmonpic(SPECIES_LITWICK, 10,3)
-    msgbox("Do you want to choose Litwick?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_CHESPIN {
+    showmonpic(SPECIES_CHESPIN, 10,3)
+    msgbox("Do you want to choose CHESPIN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_LITWICK, 5, isShiny=YES)
+        givemon(SPECIES_CHESPIN, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 0)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Litwick!")
+            msgbox("You received CHESPIN!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Litwick!")
+            msgbox("You received CHESPIN!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -161,24 +165,26 @@ script LittlerootTown_NewLab_EventScript_Litwick {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Tynamo {
-    showmonpic(SPECIES_TYNAMO, 10,3)
-    msgbox("Do you want to choose Tynamo?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_BULBASAUR {
+    showmonpic(SPECIES_BULBASAUR, 10,3)
+    msgbox("Do you want to choose BULBASAUR?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_TYNAMO, 5, isShiny=YES)
+        givemon(SPECIES_BULBASAUR, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 0)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Tynamo!")
+            msgbox("You received BULBASAUR!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Tynamo!")
+            msgbox("You received BULBASAUR!")
             removeobject(1)
-            setflag(FLAG_UNUSED_0x493)
+            setflag(STARTER_BALL_ONE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -194,24 +200,26 @@ script LittlerootTown_NewLab_EventScript_Tynamo {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Dreepy {
-    showmonpic(SPECIES_DREEPY, 10,3)
-    msgbox("Do you want to choose Dreepy?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_LITTEN {
+    showmonpic(SPECIES_LITTEN, 10,3)
+    msgbox("Do you want to choose LITTEN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_DREEPY, 5, isShiny=YES)
+        givemon(SPECIES_LITTEN, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 1)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Dreepy!")
+            msgbox("You received LITTEN!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Dreepy!")
+            msgbox("You received LITTEN!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -227,24 +235,26 @@ script LittlerootTown_NewLab_EventScript_Dreepy {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Impidimp {
-    showmonpic(SPECIES_IMPIDIMP, 10,3)
-    msgbox("Do you want to choose Impidimp?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_FENNEKIN {
+    showmonpic(SPECIES_FENNEKIN, 10,3)
+    msgbox("Do you want to choose FENNEKIN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_IMPIDIMP, 5, isShiny=YES)
+        givemon(SPECIES_FENNEKIN, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 1)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Impidimp!")
+            msgbox("You received FENNEKIN!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Impidimp!")
+            msgbox("You received FENNEKIN!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -260,24 +270,26 @@ script LittlerootTown_NewLab_EventScript_Impidimp {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Tinkatink {
-    showmonpic(SPECIES_TINKATINK, 10,3)
-    msgbox("Do you want to choose Tinkatink?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_CHARMANDER {
+    showmonpic(SPECIES_CHARMANDER, 10,3)
+    msgbox("Do you want to choose CHARMANDER?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_TINKATINK, 5, isShiny=YES)
+        givemon(SPECIES_CHARMANDER, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 1)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Tinkatink!")
+            msgbox("You received CHARMANDER!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Tinkatink!")
+            msgbox("You received CHARMANDER!")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x494)
+            setflag(STARTER_BALL_TWO)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -293,24 +305,26 @@ script LittlerootTown_NewLab_EventScript_Tinkatink {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Solosis {
-    showmonpic(SPECIES_SOLOSIS, 10,3)
-    msgbox("Do you want to choose Solosis?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_POPPLIO {
+    showmonpic(SPECIES_POPPLIO, 10,3)
+    msgbox("Do you want to choose POPPLIO?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_SOLOSIS, 5, isShiny=YES)
+        givemon(SPECIES_POPPLIO, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 2)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Solosis!")
+            msgbox("You received POPPLIO!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Solosis!")
+            msgbox("You received POPPLIO!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -326,24 +340,26 @@ script LittlerootTown_NewLab_EventScript_Solosis {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Riolu {
-    showmonpic(SPECIES_RIOLU, 10,3)
-    msgbox("Do you want to choose Riolu?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_FROAKIE {
+    showmonpic(SPECIES_FROAKIE, 10,3)
+    msgbox("Do you want to choose FROAKIE?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_RIOLU, 5, isShiny=YES)
+        givemon(SPECIES_FROAKIE, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 2)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Riolu!")
+            msgbox("You received FROAKIE!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Riolu!")
+            msgbox("You received FROAKIE!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
@@ -359,24 +375,26 @@ script LittlerootTown_NewLab_EventScript_Riolu {
 
 }
 
-script LittlerootTown_NewLab_EventScript_Jangmo_O {
-    showmonpic(SPECIES_JANGMO_O, 10,3)
-    msgbox("Do you want to choose Jangmo-o?", MSGBOX_YESNO)
+script LittlerootTown_NewLab_EventScript_SQUIRTLE {
+    showmonpic(SPECIES_SQUIRTLE, 10,3)
+    msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_JANGMO_O, 5, isShiny=YES)
+        givemon(SPECIES_SQUIRTLE, 10, isShiny=YES)
+        setvar(VAR_UNUSED_0x40F8, 2)
+        setvar(VAR_UNUSED_0x40F9, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Jangmo-o!")
+            msgbox("You received Squirtle!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("You received Jangmo-o!")
+            msgbox("You received Squirtle!")
             removeobject(3)
-            setflag(FLAG_UNUSED_0x495)
+            setflag(STARTER_BALL_THREE)
             setflag(FLAG_SYS_POKEMON_GET)
             call(NicknameBoxMon)
         }
