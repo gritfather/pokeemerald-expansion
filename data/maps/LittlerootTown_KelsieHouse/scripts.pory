@@ -8,3 +8,62 @@ script LittlerootTown_KelsieHouse_Kelsie {
         releaseall
         end
 }
+
+script LittlerootTown_KelsieHouse_BallTest{
+    lock
+    faceplayer
+    msgbox("It's a multichoice item ball")
+    bufferitemname(STR_VAR_1, ITEM_POKE_BALL)
+    dynmultipush("{STR_VAR_1}", 0)
+    bufferitemname(STR_VAR_2, ITEM_ABILITY_CAPSULE)
+    dynmultipush("{STR_VAR_2}", 1)
+    bufferitemname(STR_VAR_3, ITEM_ABILITY_PATCH)
+    dynmultipush("{STR_VAR_3}", 2)
+    dynmultistack(0, 0, TRUE, 6, TRUE, 0, DYN_MULTICHOICE_CB_NONE)
+        switch(var(VAR_RESULT)){
+            case 0: giveitem(ITEM_POKE_BALL)
+            case 1: giveitem(ITEM_ABILITY_CAPSULE)
+            case 2: giveitem(ITEM_ABILITY_PATCH)
+        }
+        removeobject(2)
+        setflag(FLAG_UNUSED_0x020)
+    releaseall
+}
+
+script LittlerootTown_KelsieHouse_BallTest2{
+    lock
+    faceplayer
+    msgbox("It's a multichoice item ball")
+    dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_SHOW_ITEM, )
+    switch(var(VAR_RESULT)){
+            case 0: giveitem(ITEM_POKE_BALL)
+            case 1: giveitem(ITEM_ABILITY_CAPSULE)
+            case 2: giveitem(ITEM_ABILITY_PATCH)
+        }
+         removeobject(2)
+         setflag(FLAG_UNUSED_0x020)
+    releaseall
+    end
+}
+
+script placeholder_EventScript {
+    givemon(SPECIES_DREEPY, 5)
+    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Dreepy")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Dreepy")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknameBoxMon)
+        }
+        else{
+            msgbox("No more room")
+        }
+
+}

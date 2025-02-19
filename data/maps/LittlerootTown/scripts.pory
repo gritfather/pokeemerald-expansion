@@ -1050,6 +1050,7 @@ script LittlerootTown_EventScript_RivalTrigger1{
     addvar(VAR_UNUSED_0x40F9, 1)
     faceplayer
     applymovement(9, moves(walk_right * 6))
+    faceplayer
     msgbox(May_Intro)
     call(LittlerootTown_EventScript_MayRivalBattle)
     goto(LittlerootTown_EventScript_MayLeaveTown)
@@ -1062,6 +1063,7 @@ script LittlerootTown_EventScript_RivalTrigger2{
     applymovement(9, moves(
         walk_down
         walk_right * 7))
+    faceplayer
     msgbox(May_Intro)
     call(LittlerootTown_EventScript_MayRivalBattle)
     goto(LittlerootTown_EventScript_MayLeaveTown)

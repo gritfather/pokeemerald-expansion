@@ -2097,96 +2097,100 @@ LittlerootTown_EventScript_RivalTrigger1::
 # 1052 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 9, LittlerootTown_EventScript_RivalTrigger1_Movement_0
 # 1053 "data/maps/LittlerootTown/scripts.pory"
-	msgbox May_Intro
+	faceplayer
 # 1054 "data/maps/LittlerootTown/scripts.pory"
-	call LittlerootTown_EventScript_MayRivalBattle
+	msgbox May_Intro
 # 1055 "data/maps/LittlerootTown/scripts.pory"
+	call LittlerootTown_EventScript_MayRivalBattle
+# 1056 "data/maps/LittlerootTown/scripts.pory"
 	goto LittlerootTown_EventScript_MayLeaveTown
 	return
 
 
 LittlerootTown_EventScript_RivalTrigger2::
-# 1059 "data/maps/LittlerootTown/scripts.pory"
-	lockall
 # 1060 "data/maps/LittlerootTown/scripts.pory"
-	addvar VAR_UNUSED_0x40F9, 1
+	lockall
 # 1061 "data/maps/LittlerootTown/scripts.pory"
-	faceplayer
+	addvar VAR_UNUSED_0x40F9, 1
 # 1062 "data/maps/LittlerootTown/scripts.pory"
+	faceplayer
+# 1063 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 9, LittlerootTown_EventScript_RivalTrigger2_Movement_0
-# 1065 "data/maps/LittlerootTown/scripts.pory"
-	msgbox May_Intro
 # 1066 "data/maps/LittlerootTown/scripts.pory"
-	call LittlerootTown_EventScript_MayRivalBattle
+	faceplayer
 # 1067 "data/maps/LittlerootTown/scripts.pory"
+	msgbox May_Intro
+# 1068 "data/maps/LittlerootTown/scripts.pory"
+	call LittlerootTown_EventScript_MayRivalBattle
+# 1069 "data/maps/LittlerootTown/scripts.pory"
 	goto LittlerootTown_EventScript_MayLeaveTown
 	return
 
 
 LittlerootTown_EventScript_MayRivalBattle::
-# 1071 "data/maps/LittlerootTown/scripts.pory"
-	switch VAR_UNUSED_0x40F8
-# 1072 "data/maps/LittlerootTown/scripts.pory"
-	case 0, LittlerootTown_EventScript_MayRivalBattle_3
 # 1073 "data/maps/LittlerootTown/scripts.pory"
-	case 1, LittlerootTown_EventScript_MayRivalBattle_4
+	switch VAR_UNUSED_0x40F8
 # 1074 "data/maps/LittlerootTown/scripts.pory"
+	case 0, LittlerootTown_EventScript_MayRivalBattle_3
+# 1075 "data/maps/LittlerootTown/scripts.pory"
+	case 1, LittlerootTown_EventScript_MayRivalBattle_4
+# 1076 "data/maps/LittlerootTown/scripts.pory"
 	case 2, LittlerootTown_EventScript_MayRivalBattle_5
 LittlerootTown_EventScript_MayRivalBattle_1:
 	return
 
 LittlerootTown_EventScript_MayRivalBattle_3:
-# 1072 "data/maps/LittlerootTown/scripts.pory"
+# 1074 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_MayTreeckoBattle
 	goto LittlerootTown_EventScript_MayRivalBattle_1
 
 LittlerootTown_EventScript_MayRivalBattle_4:
-# 1073 "data/maps/LittlerootTown/scripts.pory"
+# 1075 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_MayTorchicBattle
 	goto LittlerootTown_EventScript_MayRivalBattle_1
 
 LittlerootTown_EventScript_MayRivalBattle_5:
-# 1074 "data/maps/LittlerootTown/scripts.pory"
+# 1076 "data/maps/LittlerootTown/scripts.pory"
 	call LittlerootTown_EventScript_MayMudkipBattle
 	goto LittlerootTown_EventScript_MayRivalBattle_1
 
 
 LittlerootTown_EventScript_MayMudkipBattle::
-# 1080 "data/maps/LittlerootTown/scripts.pory"
+# 1082 "data/maps/LittlerootTown/scripts.pory"
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, May_Outro
 	return
 
 
 LittlerootTown_EventScript_MayTreeckoBattle::
-# 1085 "data/maps/LittlerootTown/scripts.pory"
+# 1087 "data/maps/LittlerootTown/scripts.pory"
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, May_Outro
 	return
 
 
 LittlerootTown_EventScript_MayTorchicBattle::
-# 1090 "data/maps/LittlerootTown/scripts.pory"
+# 1092 "data/maps/LittlerootTown/scripts.pory"
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, May_Outro
 	return
 
 
 LittlerootTown_EventScript_MayLeaveTown::
-# 1095 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_EventScript_MayLeaveTown_Text_0
-# 1096 "data/maps/LittlerootTown/scripts.pory"
-	closemessage
 # 1097 "data/maps/LittlerootTown/scripts.pory"
-	lock
+	msgbox LittlerootTown_EventScript_MayLeaveTown_Text_0
 # 1098 "data/maps/LittlerootTown/scripts.pory"
+	closemessage
+# 1099 "data/maps/LittlerootTown/scripts.pory"
+	lock
+# 1100 "data/maps/LittlerootTown/scripts.pory"
 	applymovement 9, LittlerootTown_EventScript_MayLeaveTown_Movement_0
-# 1102 "data/maps/LittlerootTown/scripts.pory"
-	waitmovement 0
 # 1103 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 9
+	waitmovement 0
 # 1104 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_UNUSED_0x496
+	removeobject 9
 # 1105 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_UNUSED_0x497
+	setflag FLAG_UNUSED_0x496
 # 1106 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_UNUSED_0x497
+# 1107 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	end
 
@@ -2207,53 +2211,51 @@ LittlerootTown_EventScript_RivalTrigger1_Movement_0:
 	walk_right
 	step_end
 
-# 1062 "data/maps/LittlerootTown/scripts.pory"
-LittlerootTown_EventScript_RivalTrigger2_Movement_0:
 # 1063 "data/maps/LittlerootTown/scripts.pory"
+LittlerootTown_EventScript_RivalTrigger2_Movement_0:
+# 1064 "data/maps/LittlerootTown/scripts.pory"
 	walk_down
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
-# 1064 "data/maps/LittlerootTown/scripts.pory"
+# 1065 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
 	step_end
 
-# 1098 "data/maps/LittlerootTown/scripts.pory"
+# 1100 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_MayLeaveTown_Movement_0:
-# 1099 "data/maps/LittlerootTown/scripts.pory"
-	walk_down
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1101 "data/maps/LittlerootTown/scripts.pory"
 	walk_left
 	step_end
 
@@ -2266,19 +2268,19 @@ LittlerootTown_EventScript_NewLabSign_Text_0:
 	.string "Professor Birch's Lab$"
 
 LittlerootTown_EventScript_MayLeaveTown_Text_0:
-# 1095 "data/maps/LittlerootTown/scripts.pory"
+# 1097 "data/maps/LittlerootTown/scripts.pory"
 	.string "I'll get you on the next one. Good luck\n"
 	.string "raising your Pokemon!$"
 
 May_Intro::
-# 1110 "data/maps/LittlerootTown/scripts.pory"
+# 1111 "data/maps/LittlerootTown/scripts.pory"
 	.string "You've made a huge mistake!$"
 
 May_Outro::
-# 1114 "data/maps/LittlerootTown/scripts.pory"
+# 1115 "data/maps/LittlerootTown/scripts.pory"
 	.string "I've made a huge mistake?$"
 
 PostBattle_May::
-# 1118 "data/maps/LittlerootTown/scripts.pory"
+# 1119 "data/maps/LittlerootTown/scripts.pory"
 	.string "You're pretty good. With my help you\n"
 	.string "could be the best.$"
