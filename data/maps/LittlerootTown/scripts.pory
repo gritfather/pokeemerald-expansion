@@ -5,7 +5,7 @@ raw `
 .set LOCALID_BIRCH, 8
 
 LittlerootTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
+    map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
 	.byte 0
@@ -53,7 +53,19 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
     call_if_unset FLAG_UNUSED_0x497, LittlerootTown_EventScript_SetupRivalBattle
+    random 2
+	switch VAR_RESULT
+	case 0, LittlerootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	case 1, LittlerootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 	end
+
+LittlerootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+	setweather WEATHER_SUNNY
+	return
+
+LittlerootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+	setweather WEATHER_RAIN
+	return
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3

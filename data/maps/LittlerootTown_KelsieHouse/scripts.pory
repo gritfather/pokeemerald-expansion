@@ -14,7 +14,7 @@ script LittlerootTown_KelsieHouse_Kelsie {
 		lockall
         faceplayer
         if(var(VAR_UNUSED_0x4091) == 1, && flag(FLAG_UNUSED_0x020)){
-            msgbox(format("How's that Pokemon doing?"), MSGBOX_AUTOCLOSE)
+            msgbox(format("I really like lemonade. I like it a lot!"), MSGBOX_AUTOCLOSE)
             releaseall
             end
         }
