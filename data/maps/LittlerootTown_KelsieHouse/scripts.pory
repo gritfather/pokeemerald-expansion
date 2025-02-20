@@ -86,7 +86,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
     dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
         switch(var(VAR_RESULT)){
             case 885:
-                showmonpic(885, 8, 0) 
+                showmonpic(885, 8, 5) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Dreepy)
@@ -97,7 +97,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 443: 
-                showmonpic(443, 8, 0) 
+                showmonpic(443, 8, 5) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Gible)
@@ -108,7 +108,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 610: 
-                showmonpic(610, 8, 0) 
+                showmonpic(610, 8, 5) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Axew)

@@ -402,7 +402,7 @@ placeholder_EventScript_Axew_3:
 
 LittlerootTown_KelsieHouse_Kelsie_Text_0:
 # 17 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "How's that Pokemon doing?$"
+	.string "I really like lemonade. I like it a lot!$"
 
 LittlerootTown_KelsieHouse_Kelsie_Text_1:
 # 22 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
