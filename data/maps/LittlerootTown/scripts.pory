@@ -1107,6 +1107,15 @@ script LittlerootTown_EventScript_MayLeaveTown{
     end
 }
 
+script LittlerootTown_EventScript_ItemLemonade{
+    lockall
+    finditem(ITEM_LEMONADE)
+    removeobject(10)
+    setflag(FLAG_UNUSED_0x023)
+    release
+    end
+}
+
 text May_Intro{
     "You've made a huge mistake!"
 }

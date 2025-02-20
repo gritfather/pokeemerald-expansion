@@ -1,13 +1,57 @@
-mapscripts LittlerootTown_KelsieHouse_MapScripts {}
+mapscripts LittlerootTown_KelsieHouse_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call_if_unset(FLAG_UNUSED_0x020, LittlerootTown_KelsieHouse_SetUpBall)
+    }
+}
+
+script LittlerootTown_KelsieHouse_SetUpBall{
+    if(!flag(FLAG_UNUSED_0x021) && !checkitem(ITEM_LEMONADE) || !flag(FLAG_UNUSED_0x021)){
+        setflag(FLAG_UNUSED_0x020)
+    }
+}
 
 script LittlerootTown_KelsieHouse_Kelsie {
 		lockall
         faceplayer
-        msgbox(format("Hello! I'm Kelsie, and I love coffee!"))
-        waitmessage
-        releaseall
-        end
-}
+        if(var(VAR_UNUSED_0x4091) == 1, && flag(FLAG_UNUSED_0x020)){
+            msgbox(format("How's that Pokemon doing?"), MSGBOX_AUTOCLOSE)
+            releaseall
+            end
+        }
+        elif(var(VAR_UNUSED_0x4091) == 1){
+            msgbox(format("Go ahead and choose one from that ball."), MSGBOX_AUTOCLOSE)
+            releaseall
+            end
+        }
+        elif(!flag(FLAG_UNUSED_0x021) && !checkitem(ITEM_LEMONADE) || !flag(FLAG_UNUSED_0x021) || !checkitem(ITEM_LEMONADE)){
+            msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."))
+            waitmessage
+            setflag(FLAG_UNUSED_0x021)
+            releaseall
+            end
+        }
+        elif(flag(FLAG_UNUSED_0x021) && checkitem(ITEM_LEMONADE)){
+            msgbox(format("Oh! You brought me a Lemonade?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES){
+                removeitem(ITEM_LEMONADE)
+                clearflag(FLAG_UNUSED_0x020)
+                addobject(2)
+                addvar(VAR_UNUSED_0x4091, 1)
+                releaseall
+                end
+            }
+            else{
+                releaseall
+                end
+                }
+                    
+            }
+        }
+
+
+
+
+
 
 script LittlerootTown_KelsieHouse_BallTest{
     lock
@@ -28,6 +72,7 @@ script LittlerootTown_KelsieHouse_BallTest{
         removeobject(2)
         setflag(FLAG_UNUSED_0x020)
     releaseall
+    end
 }
 
 script LittlerootTown_KelsieHouse_BallTest2{
@@ -54,15 +99,32 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 443: 
-                showmonpic(443, 15, 5)
-                call(placeholder_EventScript_Gible)
+                showmonpic(443, 8, 0) 
+                msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
+                    if(var(VAR_RESULT) == YES){
+                        call(placeholder_EventScript_Gible)
+                    }
+                    else{
+                        hidemonpic
+                        closemessage
+                        end
+                    }
             case 610: 
-                showmonpic(610, 15, 5)
-                call(placeholder_EventScript_Axew)
+                showmonpic(610, 8, 0) 
+                msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
+                    if(var(VAR_RESULT) == YES){
+                        call(placeholder_EventScript_Axew)
+                    }
+                    else{
+                        hidemonpic
+                        closemessage
+                        end
+                    }
         }
         removeobject(2)
         setflag(FLAG_UNUSED_0x020)
     releaseall
+    end
 }
 
 

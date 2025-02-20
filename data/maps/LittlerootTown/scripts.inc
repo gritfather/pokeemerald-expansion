@@ -2193,6 +2193,20 @@ LittlerootTown_EventScript_MayLeaveTown::
 	end
 
 
+LittlerootTown_EventScript_ItemLemonade::
+# 1111 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1112 "data/maps/LittlerootTown/scripts.pory"
+	finditem ITEM_LEMONADE
+# 1113 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 10
+# 1114 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_UNUSED_0x023
+# 1115 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+
 # 1052 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_EventScript_RivalTrigger1_Movement_0:
 # 1052 "data/maps/LittlerootTown/scripts.pory"
@@ -2271,14 +2285,14 @@ LittlerootTown_EventScript_MayLeaveTown_Text_0:
 	.string "raising your Pokemon!$"
 
 May_Intro::
-# 1110 "data/maps/LittlerootTown/scripts.pory"
+# 1119 "data/maps/LittlerootTown/scripts.pory"
 	.string "You've made a huge mistake!$"
 
 May_Outro::
-# 1114 "data/maps/LittlerootTown/scripts.pory"
+# 1123 "data/maps/LittlerootTown/scripts.pory"
 	.string "I've made a huge mistake?$"
 
 PostBattle_May::
-# 1118 "data/maps/LittlerootTown/scripts.pory"
+# 1127 "data/maps/LittlerootTown/scripts.pory"
 	.string "You're pretty good. With my help you\n"
 	.string "could be the best.$"
