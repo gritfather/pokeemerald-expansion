@@ -1047,23 +1047,25 @@ script LittlerootTown_EventScript_SetupRivalBattle{
 
 script LittlerootTown_EventScript_RivalTrigger1{
     lock
+    special(PlayTrainerEncounterMusic)
     addvar(VAR_UNUSED_0x40F9, 1)
-    faceplayer
-    applymovement(9, moves(walk_right * 6))
-    faceplayer
-    msgbox(May_Intro)
+    applymovement(9, moves(walk_fast_right * 6))
+    waitmovement(9)
+    msgbox(May_Intro, MSGBOX_NPC)
     call(LittlerootTown_EventScript_MayRivalBattle)
     goto(LittlerootTown_EventScript_MayLeaveTown)
 }
 
 script LittlerootTown_EventScript_RivalTrigger2{
     lock
+    special(PlayTrainerEncounterMusic)
     addvar(VAR_UNUSED_0x40F9, 1)
     applymovement(9, moves(
         walk_down
-        walk_right * 7))
-    faceplayer
-    msgbox(May_Intro)
+        walk_fast_right * 7))
+    waitmovement(9)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    msgbox(May_Intro, MSGBOX_NPC)
     call(LittlerootTown_EventScript_MayRivalBattle)
     goto(LittlerootTown_EventScript_MayLeaveTown)
 }
@@ -1097,7 +1099,7 @@ script LittlerootTown_EventScript_MayLeaveTown{
     closemessage
     lock
         applymovement(9, moves(
-            walk_left * 12
+            walk_fast_left * 12
         ))
         waitmovement(0)
         removeobject(9)
@@ -1121,7 +1123,7 @@ text May_Intro{
 }
 
 text May_Outro{
-    "I've made a huge mistake?"
+    format("I've made a huge mistake?")
 }
 
 text PostBattle_May{

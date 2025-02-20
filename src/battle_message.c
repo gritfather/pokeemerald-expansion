@@ -3563,6 +3563,8 @@ struct TrainerSlide
     const u8 *msgDynamax;
 };
 
+static const u8 sText_YouArePrettyGood[] = _("You're pretty good. With my help you\ncould be the best!$\p");
+
 static const struct TrainerSlide sTrainerSlides[] =
 {
     /* Put any trainer slide-in messages inside this array.
@@ -3584,6 +3586,22 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+    {
+        .trainerId = TRAINER_MAY_ROUTE_103_MUDKIP,
+        .isFrontierTrainer = FALSE,
+        .msgLastLowHp = sText_YouArePrettyGood,
+    },
+    {
+        .trainerId = TRAINER_MAY_ROUTE_103_TREECKO,
+        .isFrontierTrainer = FALSE,
+        .msgLastLowHp = sText_YouArePrettyGood,
+    },
+    {
+        .trainerId = TRAINER_MAY_ROUTE_103_TORCHIC,
+        .isFrontierTrainer = FALSE,
+        .msgLastLowHp = sText_YouArePrettyGood
+    },
+
 };
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)

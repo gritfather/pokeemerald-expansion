@@ -37,6 +37,8 @@ script LittlerootTown_KelsieHouse_Kelsie {
                 clearflag(FLAG_UNUSED_0x020)
                 addobject(2)
                 addvar(VAR_UNUSED_0x4091, 1)
+                msgbox(format("Go ahead and choose one from that ball."))
+                waitmessage
                 releaseall
                 end
             }
@@ -47,10 +49,6 @@ script LittlerootTown_KelsieHouse_Kelsie {
                     
             }
         }
-
-
-
-
 
 
 script LittlerootTown_KelsieHouse_BallTest{
