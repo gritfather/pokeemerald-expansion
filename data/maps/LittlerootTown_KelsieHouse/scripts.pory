@@ -14,16 +14,16 @@ script LittlerootTown_KelsieHouse_BallTest{
     faceplayer
     msgbox("It's a multichoice item ball")
     bufferitemname(STR_VAR_1, ITEM_POKE_BALL)
-    dynmultipush("{STR_VAR_1}", 0)
+    dynmultipush("{STR_VAR_1}", 1)
     bufferitemname(STR_VAR_2, ITEM_ABILITY_CAPSULE)
-    dynmultipush("{STR_VAR_2}", 1)
+    dynmultipush("{STR_VAR_2}", 79)
     bufferitemname(STR_VAR_3, ITEM_ABILITY_PATCH)
-    dynmultipush("{STR_VAR_3}", 2)
-    dynmultistack(0, 0, TRUE, 6, TRUE, 0, DYN_MULTICHOICE_CB_NONE)
+    dynmultipush("{STR_VAR_3}", 80)
+    dynmultistack(0, 0, TRUE, 6, TRUE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM)
         switch(var(VAR_RESULT)){
-            case 0: giveitem(ITEM_POKE_BALL)
-            case 1: giveitem(ITEM_ABILITY_CAPSULE)
-            case 2: giveitem(ITEM_ABILITY_PATCH)
+            case 1: giveitem(ITEM_POKE_BALL)
+            case 79: giveitem(ITEM_ABILITY_CAPSULE)
+            case 80: giveitem(ITEM_ABILITY_PATCH)
         }
         removeobject(2)
         setflag(FLAG_UNUSED_0x020)
@@ -33,20 +33,40 @@ script LittlerootTown_KelsieHouse_BallTest{
 script LittlerootTown_KelsieHouse_BallTest2{
     lock
     faceplayer
-    msgbox("It's a multichoice item ball")
-    dynmultichoice(0, 0, FALSE, 6, 0, DYN_MULTICHOICE_CB_SHOW_ITEM, )
-    switch(var(VAR_RESULT)){
-            case 0: giveitem(ITEM_POKE_BALL)
-            case 1: giveitem(ITEM_ABILITY_CAPSULE)
-            case 2: giveitem(ITEM_ABILITY_PATCH)
+    msgbox("It's a multichoice Pokeball")
+    bufferspeciesname(STR_VAR_1, SPECIES_DREEPY)
+    dynmultipush("{STR_VAR_1}", 885)
+    bufferspeciesname(STR_VAR_2, SPECIES_GIBLE)
+    dynmultipush("{STR_VAR_2}", 443)
+    bufferspeciesname(STR_VAR_3, SPECIES_AXEW)
+    dynmultipush("{STR_VAR_3}", 610)
+    dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+        switch(var(VAR_RESULT)){
+            case 885:
+                showmonpic(885, 8, 0) 
+                msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
+                    if(var(VAR_RESULT) == YES){
+                        call(placeholder_EventScript_Dreepy)
+                    }
+                    else{
+                        hidemonpic
+                        closemessage
+                        end
+                    }
+            case 443: 
+                showmonpic(443, 15, 5)
+                call(placeholder_EventScript_Gible)
+            case 610: 
+                showmonpic(610, 15, 5)
+                call(placeholder_EventScript_Axew)
         }
-         removeobject(2)
-         setflag(FLAG_UNUSED_0x020)
+        removeobject(2)
+        setflag(FLAG_UNUSED_0x020)
     releaseall
-    end
 }
 
-script placeholder_EventScript {
+
+script placeholder_EventScript_Dreepy {
     givemon(SPECIES_DREEPY, 5)
     if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
@@ -65,5 +85,53 @@ script placeholder_EventScript {
         else{
             msgbox("No more room")
         }
+    return
+}
 
+script placeholder_EventScript_Gible {
+    givemon(SPECIES_GIBLE, 5)
+    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Gible")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Gible")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknameBoxMon)
+        }
+        else{
+            msgbox("No more room")
+        }
+    return
+}
+
+script placeholder_EventScript_Axew {
+    givemon(SPECIES_AXEW, 5)
+    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Axew")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknamePartyMon)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("You received Axew")
+            removeobject(2)
+            setflag(FLAG_UNUSED_0x020)
+            call(NicknameBoxMon)
+        }
+        else{
+            msgbox("No more room")
+        }
+    return
+}
+
+text LittlerootTown_KelsieHouse_YouSureAboutThatText{
+    "Are you sure about that?"
 }

@@ -1046,7 +1046,7 @@ script LittlerootTown_EventScript_SetupRivalBattle{
 }
 
 script LittlerootTown_EventScript_RivalTrigger1{
-    lockall
+    lock
     addvar(VAR_UNUSED_0x40F9, 1)
     faceplayer
     applymovement(9, moves(walk_right * 6))
@@ -1057,9 +1057,8 @@ script LittlerootTown_EventScript_RivalTrigger1{
 }
 
 script LittlerootTown_EventScript_RivalTrigger2{
-    lockall
+    lock
     addvar(VAR_UNUSED_0x40F9, 1)
-    faceplayer
     applymovement(9, moves(
         walk_down
         walk_right * 7))
