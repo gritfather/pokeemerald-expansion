@@ -43,8 +43,8 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
+#define KELSIE_HOUSE_BALL    0x20 // Unused Flag
+#define TALKED_TO_KELSIE    0x21 // Unused Flag
 #define FLAG_UNUSED_0x022    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
@@ -1225,8 +1225,8 @@
 #define STARTER_BALL_ONE                                           0x493 // Unused Flag
 #define STARTER_BALL_TWO                                           0x494 // Unused Flag
 #define STARTER_BALL_THREE                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+#define STARTER_BALL_FLAG                                           0x496 // Unused Flag
+#define RIVAL_BATTLE_FLAG                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

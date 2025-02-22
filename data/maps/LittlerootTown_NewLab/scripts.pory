@@ -101,8 +101,8 @@ script LittlerootTown_NewLab_EventScript_ROWLET {
     msgbox("Do you want to choose ROWLET?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_ROWLET, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 0)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 0)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received ROWLET!")
@@ -136,8 +136,8 @@ script LittlerootTown_NewLab_EventScript_CHESPIN {
     msgbox("Do you want to choose CHESPIN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_CHESPIN, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 0)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 0)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received CHESPIN!")
@@ -171,8 +171,8 @@ script LittlerootTown_NewLab_EventScript_BULBASAUR {
     msgbox("Do you want to choose BULBASAUR?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_BULBASAUR, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 0)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 0)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received BULBASAUR!")
@@ -206,8 +206,8 @@ script LittlerootTown_NewLab_EventScript_LITTEN {
     msgbox("Do you want to choose LITTEN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_LITTEN, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 1)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 1)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received LITTEN!")
@@ -241,8 +241,8 @@ script LittlerootTown_NewLab_EventScript_FENNEKIN {
     msgbox("Do you want to choose FENNEKIN?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_FENNEKIN, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 1)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 1)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received FENNEKIN!")
@@ -276,8 +276,8 @@ script LittlerootTown_NewLab_EventScript_CHARMANDER {
     msgbox("Do you want to choose CHARMANDER?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_CHARMANDER, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 1)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 1)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received CHARMANDER!")
@@ -311,8 +311,8 @@ script LittlerootTown_NewLab_EventScript_POPPLIO {
     msgbox("Do you want to choose POPPLIO?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_POPPLIO, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 2)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 2)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received POPPLIO!")
@@ -346,8 +346,8 @@ script LittlerootTown_NewLab_EventScript_FROAKIE {
     msgbox("Do you want to choose FROAKIE?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_FROAKIE, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 2)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 2)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received FROAKIE!")
@@ -381,8 +381,8 @@ script LittlerootTown_NewLab_EventScript_SQUIRTLE {
     msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         givemon(SPECIES_SQUIRTLE, 10, isShiny=YES)
-        setvar(VAR_UNUSED_0x40F8, 2)
-        setvar(VAR_UNUSED_0x40F9, 1)
+        setvar(MADS_STARTER, 2)
+        setvar(LITTLEROOT_STATE, 1)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Squirtle!")

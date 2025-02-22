@@ -39,7 +39,6 @@ LittlerootTown_MapScripts::
 	@ 3: Met Rival
 	@ 4: Received Pokedex
 
-
 LittlerootTown_OnTransition:
 	setflag FLAG_VISITED_LITTLEROOT_TOWN
 	call Common_EventScript_SetupRivalGfxId
@@ -52,7 +51,7 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
-    call_if_unset FLAG_UNUSED_0x497, LittlerootTown_EventScript_SetupRivalBattle
+    call_if_unset RIVAL_BATTLE_FLAG, LittlerootTown_EventScript_SetupRivalBattle
     random 2
 	switch VAR_RESULT
 	case 0, LittlerootTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
@@ -1050,40 +1049,44 @@ script LittlerootTown_EventScript_NewLabSign {
 
 script LittlerootTown_EventScript_SetupRivalBattle{
     if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
-        setflag(FLAG_UNUSED_0x496)
+        setflag(STARTER_BALL_FLAG)
+		setvar(LITTLEROOT_STATE, 0)
     }
-    else{
-        clearflag(FLAG_UNUSED_0x496)
+    elif(var(LITTLEROOT_STATE) == 1){
+        clearflag(STARTER_BALL_FLAG)
     }
+	elif(var(LITTLEROOT_STATE) >= 2){
+		setflag(STARTER_BALL_FLAG)
+	}
 }
 
 script LittlerootTown_EventScript_RivalTrigger1{
     lock
     special(PlayTrainerEncounterMusic)
-    addvar(VAR_UNUSED_0x40F9, 1)
+    setvar(LITTLEROOT_STATE, 2)
     applymovement(9, moves(walk_fast_right * 6))
     waitmovement(9)
-    msgbox(May_Intro, MSGBOX_NPC)
     call(LittlerootTown_EventScript_MayRivalBattle)
-    goto(LittlerootTown_EventScript_MayLeaveTown)
+	releaseall
+	end
 }
 
 script LittlerootTown_EventScript_RivalTrigger2{
     lock
     special(PlayTrainerEncounterMusic)
-    addvar(VAR_UNUSED_0x40F9, 1)
+    setvar(LITTLEROOT_STATE, 2)
     applymovement(9, moves(
         walk_down
         walk_fast_right * 7))
     waitmovement(9)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
-    msgbox(May_Intro, MSGBOX_NPC)
     call(LittlerootTown_EventScript_MayRivalBattle)
-    goto(LittlerootTown_EventScript_MayLeaveTown)
+	releaseall
+	end
 }
 
 script LittlerootTown_EventScript_MayRivalBattle{
-    switch (var(VAR_UNUSED_0x40F8)){
+    switch (var(MADS_STARTER)){
         case 0: call(LittlerootTown_EventScript_MayTreeckoBattle)
         case 1: call(LittlerootTown_EventScript_MayTorchicBattle)
         case 2: call(LittlerootTown_EventScript_MayMudkipBattle)
@@ -1092,33 +1095,41 @@ script LittlerootTown_EventScript_MayRivalBattle{
 }
 
 script LittlerootTown_EventScript_MayMudkipBattle{
-    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_MUDKIP, May_Outro)
-    return
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_MUDKIP, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+	return
 }
 
 script LittlerootTown_EventScript_MayTreeckoBattle{
-    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, May_Outro)
-    return
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TREECKO, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+	return
 }
 
 script LittlerootTown_EventScript_MayTorchicBattle{
-    trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TORCHIC, May_Outro)
-    return
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TORCHIC, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+	return
 }
 
 script LittlerootTown_EventScript_MayLeaveTown{
-    msgbox(format("I'll get you on the next one. Good luck raising your Pokemon!") MSGBOX_AUTOCLOSE)
-    closemessage
-    lock
-        applymovement(9, moves(
-            walk_fast_left * 12
-        ))
-        waitmovement(0)
-        removeobject(9)
-        setflag(FLAG_UNUSED_0x496)
-        setflag(FLAG_UNUSED_0x497)
-    releaseall
-    end
+    	msgbox(format("I'll get you on the next one. Good luck raising your Pokemon!") MSGBOX_AUTOCLOSE)
+    	closemessage
+    	lock
+        	applymovement(9, moves(
+            	walk_fast_left * 12
+        	))
+        	waitmovement(0)
+        	removeobject(9)
+        	setflag(STARTER_BALL_FLAG)
+        	setflag(RIVAL_BATTLE_FLAG)
+    	releaseall
+    	end
+}
+
+script LittlerootTown_EventScript_LossToMay{
+	setflag(STARTER_BALL_FLAG)
+	setflag(RIVAL_BATTLE_FLAG)
+	removeobject(9)
+	releaseall
+	end
 }
 
 script LittlerootTown_EventScript_ItemLemonade{

@@ -253,9 +253,9 @@ LittlerootTown_NewLab_EventScript_ROWLET_1:
 # 103 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_ROWLET, 10, isShiny = YES
 # 104 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 0
+	setvar MADS_STARTER, 0
 # 105 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 106 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_ROWLET_4
@@ -317,9 +317,9 @@ LittlerootTown_NewLab_EventScript_CHESPIN_1:
 # 138 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_CHESPIN, 10, isShiny = YES
 # 139 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 0
+	setvar MADS_STARTER, 0
 # 140 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 141 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_CHESPIN_4
@@ -381,9 +381,9 @@ LittlerootTown_NewLab_EventScript_BULBASAUR_1:
 # 173 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_BULBASAUR, 10, isShiny = YES
 # 174 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 0
+	setvar MADS_STARTER, 0
 # 175 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 176 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_BULBASAUR_4
@@ -445,9 +445,9 @@ LittlerootTown_NewLab_EventScript_LITTEN_1:
 # 208 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_LITTEN, 10, isShiny = YES
 # 209 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 1
+	setvar MADS_STARTER, 1
 # 210 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 211 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_LITTEN_4
@@ -509,9 +509,9 @@ LittlerootTown_NewLab_EventScript_FENNEKIN_1:
 # 243 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_FENNEKIN, 10, isShiny = YES
 # 244 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 1
+	setvar MADS_STARTER, 1
 # 245 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 246 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_FENNEKIN_4
@@ -573,9 +573,9 @@ LittlerootTown_NewLab_EventScript_CHARMANDER_1:
 # 278 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_CHARMANDER, 10, isShiny = YES
 # 279 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 1
+	setvar MADS_STARTER, 1
 # 280 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 281 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_CHARMANDER_4
@@ -637,9 +637,9 @@ LittlerootTown_NewLab_EventScript_POPPLIO_1:
 # 313 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_POPPLIO, 10, isShiny = YES
 # 314 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 2
+	setvar MADS_STARTER, 2
 # 315 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 316 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_POPPLIO_4
@@ -701,9 +701,9 @@ LittlerootTown_NewLab_EventScript_FROAKIE_1:
 # 348 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_FROAKIE, 10, isShiny = YES
 # 349 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 2
+	setvar MADS_STARTER, 2
 # 350 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 351 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_FROAKIE_4
@@ -765,9 +765,9 @@ LittlerootTown_NewLab_EventScript_SQUIRTLE_1:
 # 383 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	givemon SPECIES_SQUIRTLE, 10, isShiny = YES
 # 384 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F8, 2
+	setvar MADS_STARTER, 2
 # 385 "data/maps/LittlerootTown_NewLab/scripts.pory"
-	setvar VAR_UNUSED_0x40F9, 1
+	setvar LITTLEROOT_STATE, 1
 # 386 "data/maps/LittlerootTown_NewLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq LittlerootTown_NewLab_EventScript_SQUIRTLE_4

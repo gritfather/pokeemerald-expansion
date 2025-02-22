@@ -1,43 +1,47 @@
 mapscripts LittlerootTown_KelsieHouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        call_if_unset(FLAG_UNUSED_0x020, LittlerootTown_KelsieHouse_SetUpBall)
+        call_if_unset(KELSIE_HOUSE_BALL, LittlerootTown_KelsieHouse_SetUpBall)
     }
 }
 
 script LittlerootTown_KelsieHouse_SetUpBall{
-    if(!flag(FLAG_UNUSED_0x021) && !checkitem(ITEM_LEMONADE) || !flag(FLAG_UNUSED_0x021)){
-        setflag(FLAG_UNUSED_0x020)
+    if(!flag(TALKED_TO_KELSIE) && !checkitem(ITEM_LEMONADE) || !flag(TALKED_TO_KELSIE)){
+        setflag(KELSIE_HOUSE_BALL)
     }
 }
 
 script LittlerootTown_KelsieHouse_Kelsie {
 		lockall
         faceplayer
-        if(var(VAR_UNUSED_0x4091) == 1, && flag(FLAG_UNUSED_0x020)){
-            msgbox(format("I really like lemonade. I like it a lot!"), MSGBOX_AUTOCLOSE)
+        if(var(KELSIE_HOUSE_BALL_GET) == 1, && flag(KELSIE_HOUSE_BALL)){
+            switch(var(VAR_UNUSED_0x40FA)){
+                case 0: msgbox(LittlerootTown_KelsieHouse_Dreepy, MSGBOX_NPC)
+                case 1: msgbox(LittlerootTown_KelsieHouse_Gible, MSGBOX_NPC)
+                case 2: msgbox(LittlerootTown_KelsieHouse_Axew, MSGBOX_NPC)
+            }
             releaseall
             end
         }
-        elif(var(VAR_UNUSED_0x4091) == 1){
-            msgbox(format("Go ahead and choose one from that ball."), MSGBOX_AUTOCLOSE)
+        elif(var(KELSIE_HOUSE_BALL_GET) == 1){
+            msgbox(format("Go ahead and choose a Pokemon from that ball."), MSGBOX_AUTOCLOSE)
             releaseall
             end
         }
-        elif(!flag(FLAG_UNUSED_0x021) && !checkitem(ITEM_LEMONADE) || !flag(FLAG_UNUSED_0x021) || !checkitem(ITEM_LEMONADE)){
+        elif(!flag(TALKED_TO_KELSIE) && !checkitem(ITEM_LEMONADE) || !flag(TALKED_TO_KELSIE) || !checkitem(ITEM_LEMONADE)){
             msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."))
             waitmessage
-            setflag(FLAG_UNUSED_0x021)
+            setflag(TALKED_TO_KELSIE)
             releaseall
             end
         }
-        elif(flag(FLAG_UNUSED_0x021) && checkitem(ITEM_LEMONADE)){
+        elif(flag(TALKED_TO_KELSIE) && checkitem(ITEM_LEMONADE)){
             msgbox(format("Oh! You brought me a Lemonade?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES){
                 removeitem(ITEM_LEMONADE)
-                clearflag(FLAG_UNUSED_0x020)
+                clearflag(KELSIE_HOUSE_BALL)
                 addobject(2)
-                addvar(VAR_UNUSED_0x4091, 1)
-                msgbox(format("Go ahead and choose one from that ball."))
+                setvar(KELSIE_HOUSE_BALL_GET, 1)
+                msgbox(format("Go ahead and choose a Pokemon from that ball."))
                 waitmessage
                 releaseall
                 end
@@ -54,7 +58,7 @@ script LittlerootTown_KelsieHouse_Kelsie {
 script LittlerootTown_KelsieHouse_BallTest{
     lock
     faceplayer
-    msgbox("It's a multichoice item ball")
+    msgbox(format("Woah! There's more than one Pokemon in here"))
     bufferitemname(STR_VAR_1, ITEM_POKE_BALL)
     dynmultipush("{STR_VAR_1}", 1)
     bufferitemname(STR_VAR_2, ITEM_ABILITY_CAPSULE)
@@ -68,7 +72,7 @@ script LittlerootTown_KelsieHouse_BallTest{
             case 80: giveitem(ITEM_ABILITY_PATCH)
         }
         removeobject(2)
-        setflag(FLAG_UNUSED_0x020)
+        setflag(KELSIE_HOUSE_BALL)
     releaseall
     end
 }
@@ -76,7 +80,7 @@ script LittlerootTown_KelsieHouse_BallTest{
 script LittlerootTown_KelsieHouse_BallTest2{
     lock
     faceplayer
-    msgbox("It's a multichoice Pokeball")
+    msgbox(format("Woah! There's more than one Pokemon in here"))
     bufferspeciesname(STR_VAR_1, SPECIES_DREEPY)
     dynmultipush("{STR_VAR_1}", 885)
     bufferspeciesname(STR_VAR_2, SPECIES_GIBLE)
@@ -86,7 +90,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
     dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
         switch(var(VAR_RESULT)){
             case 885:
-                showmonpic(885, 8, 5) 
+                showmonpic(885, 8, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Dreepy)
@@ -97,7 +101,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 443: 
-                showmonpic(443, 8, 5) 
+                showmonpic(443, 8, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Gible)
@@ -108,7 +112,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 610: 
-                showmonpic(610, 8, 5) 
+                showmonpic(610, 8, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Axew)
@@ -120,7 +124,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                     }
         }
         removeobject(2)
-        setflag(FLAG_UNUSED_0x020)
+        setflag(KELSIE_HOUSE_BALL)
     releaseall
     end
 }
@@ -132,14 +136,16 @@ script placeholder_EventScript_Dreepy {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Dreepy")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 0)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Dreepy")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 0)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
         else{
@@ -154,14 +160,16 @@ script placeholder_EventScript_Gible {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Gible")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 1)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Gible")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 1)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
         else{
@@ -176,14 +184,16 @@ script placeholder_EventScript_Axew {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Axew")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 2)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Axew")
             removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
+            setvar(VAR_UNUSED_0x40FA, 2)
+            setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
         else{
@@ -194,4 +204,16 @@ script placeholder_EventScript_Axew {
 
 text LittlerootTown_KelsieHouse_YouSureAboutThatText{
     "Are you sure about that?"
+}
+
+text LittlerootTown_KelsieHouse_Dreepy{
+    format("I hope you're giving Dreepy lots of Lemonades!")
+}
+
+text LittlerootTown_KelsieHouse_Gible{
+    format("I hope you're giving Gible lots of Lemonades!")
+}
+
+text LittlerootTown_KelsieHouse_Axew{
+    format("I hope you're giving Axew lots of Lemonades!")
 }
