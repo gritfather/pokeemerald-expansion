@@ -267,7 +267,7 @@
 #define STARTER_REGION                                0x40F7 // Unused Var
 #define MADS_STARTER                                0x40F8 // 0=Treecko, 1=Torchic, 2=Mudkip
 #define LITTLEROOT_STATE                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define KELSIE_HOUSE_MON                                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

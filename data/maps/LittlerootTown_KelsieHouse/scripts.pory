@@ -13,12 +13,16 @@ script LittlerootTown_KelsieHouse_SetUpBall{
 script LittlerootTown_KelsieHouse_Kelsie {
 		lockall
         faceplayer
-        if(var(KELSIE_HOUSE_BALL_GET) == 1, && flag(KELSIE_HOUSE_BALL)){
-            switch(var(VAR_UNUSED_0x40FA)){
+        if(var(VAR_TEMP_1) >= 2){
+            msgbox(LittlerootTown_KelsieHouse_StillHereText, MSGBOX_NPC)
+        }
+        elif(var(KELSIE_HOUSE_BALL_GET) == 1, && flag(KELSIE_HOUSE_BALL)){
+            switch(var(KELSIE_HOUSE_MON)){
                 case 0: msgbox(LittlerootTown_KelsieHouse_Dreepy, MSGBOX_NPC)
                 case 1: msgbox(LittlerootTown_KelsieHouse_Gible, MSGBOX_NPC)
                 case 2: msgbox(LittlerootTown_KelsieHouse_Axew, MSGBOX_NPC)
             }
+            addvar(VAR_TEMP_1, 1)
             releaseall
             end
         }
@@ -90,7 +94,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
     dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
         switch(var(VAR_RESULT)){
             case 885:
-                showmonpic(885, 8, 3) 
+                showmonpic(885, 9, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Dreepy)
@@ -101,7 +105,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 443: 
-                showmonpic(443, 8, 3) 
+                showmonpic(443, 9, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Gible)
@@ -112,7 +116,7 @@ script LittlerootTown_KelsieHouse_BallTest2{
                         end
                     }
             case 610: 
-                showmonpic(610, 8, 3) 
+                showmonpic(610, 9, 3) 
                 msgbox(LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO)
                     if(var(VAR_RESULT) == YES){
                         call(placeholder_EventScript_Axew)
@@ -136,7 +140,7 @@ script placeholder_EventScript_Dreepy {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Dreepy")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 0)
+            setvar(KELSIE_HOUSE_MON, 0)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
@@ -144,7 +148,7 @@ script placeholder_EventScript_Dreepy {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Dreepy")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 0)
+            setvar(KELSIE_HOUSE_MON, 0)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
@@ -160,7 +164,7 @@ script placeholder_EventScript_Gible {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Gible")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 1)
+            setvar(KELSIE_HOUSE_MON, 1)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
@@ -168,7 +172,7 @@ script placeholder_EventScript_Gible {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Gible")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 1)
+            setvar(KELSIE_HOUSE_MON, 1)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
@@ -184,7 +188,7 @@ script placeholder_EventScript_Axew {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Axew")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 2)
+            setvar(KELSIE_HOUSE_MON, 2)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknamePartyMon)
         }
@@ -192,7 +196,7 @@ script placeholder_EventScript_Axew {
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You received Axew")
             removeobject(2)
-            setvar(VAR_UNUSED_0x40FA, 2)
+            setvar(KELSIE_HOUSE_MON, 2)
             setflag(KELSIE_HOUSE_BALL)
             call(NicknameBoxMon)
         }
@@ -216,4 +220,8 @@ text LittlerootTown_KelsieHouse_Gible{
 
 text LittlerootTown_KelsieHouse_Axew{
     format("I hope you're giving Axew lots of Lemonades!")
+}
+
+text LittlerootTown_KelsieHouse_StillHereText{
+    format("I mean this in the nicest way possible. Why are you still here?")
 }
