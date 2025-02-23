@@ -1048,7 +1048,9 @@ script LittlerootTown_EventScript_NewLabSign {
 
 script LittlerootTown_EventScript_NoPokeTrigger{
 	lockall
-	msgbox("DAD's advice…\n{PLAYER}, there's a time and place for\leverything!{PAUSE_UNTIL_PRESS}", MSGBOX_AUTOCLOSE)
+	speakername(CommonName_Text_Dad)
+	msgbox("{PLAYER}, there's a time and place for\leverything!", MSGBOX_AUTOCLOSE)
+	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(
 		emote_question_mark
 		jump_down
@@ -1150,6 +1152,10 @@ script LittlerootTown_EventScript_ItemLemonade{
     setflag(FLAG_UNUSED_0x023)
     release
     end
+}
+
+text CommonName_Text_Dad{
+	"Dad"
 }
 
 text May_Intro{
