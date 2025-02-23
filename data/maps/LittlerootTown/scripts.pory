@@ -93,8 +93,7 @@ LittlerootTown_EventScript_MoveMomToMaysDoor::
 	return
 
 LittlerootTown_EventScript_SetTwinPos::
-	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm LOCALID_TWIN, 10, 1
+	setobjectxyperm LOCALID_TWIN, 2, 11
 	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -1076,8 +1075,8 @@ script LittlerootTown_EventScript_RivalTrigger1{
     lock
     special(PlayTrainerEncounterMusic)
     setvar(LITTLEROOT_STATE, 2)
-    applymovement(9, moves(walk_fast_right * 6))
-    waitmovement(9)
+    applymovement(8, moves(walk_fast_right * 6))
+    waitmovement(8)
     call(LittlerootTown_EventScript_MayRivalBattle)
 	releaseall
 	end
@@ -1087,10 +1086,10 @@ script LittlerootTown_EventScript_RivalTrigger2{
     lock
     special(PlayTrainerEncounterMusic)
     setvar(LITTLEROOT_STATE, 2)
-    applymovement(9, moves(
+    applymovement(8, moves(
         walk_down
         walk_fast_right * 7))
-    waitmovement(9)
+    waitmovement(8)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     call(LittlerootTown_EventScript_MayRivalBattle)
 	releaseall
@@ -1107,17 +1106,17 @@ script LittlerootTown_EventScript_MayRivalBattle{
 }
 
 script LittlerootTown_EventScript_MayMudkipBattle{
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_MUDKIP, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_MUDKIP, 8, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
 	return
 }
 
 script LittlerootTown_EventScript_MayTreeckoBattle{
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TREECKO, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TREECKO, 8, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
 	return
 }
 
 script LittlerootTown_EventScript_MayTorchicBattle{
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TORCHIC, 9, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_MAY_ROUTE_103_TORCHIC, 8, May_Intro, May_Outro, LittlerootTown_EventScript_MayLeaveTown)
 	return
 }
 
@@ -1125,11 +1124,11 @@ script LittlerootTown_EventScript_MayLeaveTown{
     	msgbox(format("I'll get you on the next one. Good luck raising your Pokemon!") MSGBOX_AUTOCLOSE)
     	closemessage
     	lock
-        	applymovement(9, moves(
+        	applymovement(8, moves(
             	walk_fast_left * 12
         	))
         	waitmovement(0)
-        	removeobject(9)
+        	removeobject(8)
         	setflag(STARTER_BALL_FLAG)
         	setflag(RIVAL_BATTLE_FLAG)
     	releaseall
@@ -1139,7 +1138,7 @@ script LittlerootTown_EventScript_MayLeaveTown{
 script LittlerootTown_EventScript_LossToMay{
 	setflag(STARTER_BALL_FLAG)
 	setflag(RIVAL_BATTLE_FLAG)
-	removeobject(9)
+	removeobject(8)
 	releaseall
 	end
 }
@@ -1147,7 +1146,7 @@ script LittlerootTown_EventScript_LossToMay{
 script LittlerootTown_EventScript_ItemLemonade{
     lockall
     finditem(ITEM_LEMONADE)
-    removeobject(10)
+    removeobject(9)
     setflag(FLAG_UNUSED_0x023)
     release
     end

@@ -27,12 +27,12 @@ script LittlerootTown_KelsieHouse_Kelsie {
             end
         }
         elif(var(KELSIE_HOUSE_BALL_GET) == 1){
-            msgbox(format("Go ahead and choose a Pokemon from that ball."), MSGBOX_AUTOCLOSE)
+            msgbox(format("Go ahead and choose a Pokemon from that ball."), MSGBOX_NPC)
             releaseall
             end
         }
         elif(!flag(TALKED_TO_KELSIE) && !checkitem(ITEM_LEMONADE) || !flag(TALKED_TO_KELSIE) || !checkitem(ITEM_LEMONADE)){
-            msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."))
+            msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."), MSGBOX_NPC)
             waitmessage
             setflag(TALKED_TO_KELSIE)
             releaseall
@@ -45,7 +45,7 @@ script LittlerootTown_KelsieHouse_Kelsie {
                 clearflag(KELSIE_HOUSE_BALL)
                 addobject(2)
                 setvar(KELSIE_HOUSE_BALL_GET, 1)
-                msgbox(format("Go ahead and choose a Pokemon from that ball."))
+                msgbox(format("Go ahead and choose a Pokemon from that ball."), MSGBOX_AUTOCLOSE)
                 waitmessage
                 releaseall
                 end

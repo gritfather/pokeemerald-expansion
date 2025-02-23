@@ -81,14 +81,14 @@ LittlerootTown_KelsieHouse_Kelsie_21:
 
 LittlerootTown_KelsieHouse_Kelsie_3:
 # 30 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0, MSGBOX_AUTOCLOSE
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0, MSGBOX_NPC
 # 31 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
 LittlerootTown_KelsieHouse_Kelsie_4:
 # 35 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_1
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_1, MSGBOX_NPC
 # 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	waitmessage
 # 37 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
@@ -151,7 +151,7 @@ LittlerootTown_KelsieHouse_Kelsie_26:
 # 47 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	setvar KELSIE_HOUSE_BALL_GET, 1
 # 48 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0, MSGBOX_AUTOCLOSE
 # 49 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	waitmessage
 # 50 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
