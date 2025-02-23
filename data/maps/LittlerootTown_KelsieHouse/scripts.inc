@@ -88,9 +88,9 @@ LittlerootTown_KelsieHouse_Kelsie_3:
 
 LittlerootTown_KelsieHouse_Kelsie_4:
 # 35 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	speakername CommonName_Text_Kelsie
+	speakername LittlerootTown_KelsieHouse_Kelsie_Text_1
 # 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_1, MSGBOX_NPC
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_2, MSGBOX_NPC
 # 37 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	closemessage
 # 38 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
@@ -101,7 +101,7 @@ LittlerootTown_KelsieHouse_Kelsie_4:
 
 LittlerootTown_KelsieHouse_Kelsie_5:
 # 43 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_2, MSGBOX_YESNO
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_3, MSGBOX_YESNO
 # 44 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LittlerootTown_KelsieHouse_Kelsie_26
@@ -452,19 +452,21 @@ LittlerootTown_KelsieHouse_Kelsie_Text_0:
 	.string "that ball.$"
 
 LittlerootTown_KelsieHouse_Kelsie_Text_1:
-# 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "Hello! I'm Kelsie, and I love lemonade. If\n"
-	.string "you bring me a lemonade, I'll give you a\l"
-	.string "POKEMON.$"
+# 35 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "Kelsie$"
 
 LittlerootTown_KelsieHouse_Kelsie_Text_2:
+# 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "Hello! I'm Kelsie, and I love lemonade. If\nyou bring me a lemonade, I'll give you a\nPOKEMON.$"
+
+LittlerootTown_KelsieHouse_Kelsie_Text_3:
 # 43 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "Oh! You brought me a Lemonade?$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_0:
 # 69 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "Woah! There's more than one Pokemon in\n"
-	.string "here$"
+	.string "Woah! There's more than one Pokemon\n"
+	.string "in here$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_1:
 # 71 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
@@ -519,5 +521,5 @@ LittlerootTown_KelsieHouse_Axew::
 
 LittlerootTown_KelsieHouse_StillHereText::
 # 229 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "I mean this in the nicest way possible.\n"
-	.string "Why are you still here?$"
+	.string "I mean this in the nicest way\n"
+	.string "possible. Why are you still here?$"

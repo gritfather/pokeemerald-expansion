@@ -32,8 +32,8 @@ script LittlerootTown_KelsieHouse_Kelsie {
             end
         }
         elif(!flag(TALKED_TO_KELSIE) && !checkitem(ITEM_LEMONADE) || !flag(TALKED_TO_KELSIE) || !checkitem(ITEM_LEMONADE)){
-            speakername(CommonName_Text_Kelsie)
-            msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."), MSGBOX_NPC)
+            speakername("Kelsie")
+            msgbox("Hello! I'm Kelsie, and I love lemonade. If\nyou bring me a lemonade, I'll give you a\nPOKEMON.$", MSGBOX_NPC)
             closemessage
             setflag(TALKED_TO_KELSIE)
             releaseall

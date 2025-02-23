@@ -34,21 +34,15 @@ static void Task_DrawFieldMessage(u8 taskId)
     switch (task->tState)
     {
         case 0:
-            if (gMsgIsSignPost)
-                LoadSignPostWindowFrameGfx();
-            else
-                LoadMessageBoxAndBorderGfx();
+            LoadMessageBoxAndBorderGfx();
             task->tState++;
             break;
         case 1:
-            if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
-                DrawDialogueFrameWithNameplate(0, TRUE);
-                PutWindowTilemap(1);
-                CopyWindowToVram(1, COPYWIN_FULL);
+            DrawDialogueFrame(0, TRUE);
+            if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME))
+            {
+                DrawNamePlate(1, FALSE);
             }
-            else {
-                DrawDialogueFrame(0, TRUE);
-            } 
             task->tState++;
            break;
         case 2:
@@ -135,19 +129,23 @@ extern int GetDialogFramePlateWidth();
 
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
-    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
+    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME))
+    {
         int strLen = GetStringWidth(FONT_SMALL, gSpeakerName, -1);
-        if (strLen > 0) {
+        if (strLen > 0)
+        {
             strLen = GetDialogFramePlateWidth()/2 - strLen/2;
             gNamePlateBuffer[0] = EXT_CTRL_CODE_BEGIN;
             gNamePlateBuffer[1] = EXT_CTRL_CODE_CLEAR_TO;
             gNamePlateBuffer[2] = strLen;
             StringExpandPlaceholders(&gNamePlateBuffer[3], gSpeakerName);
-        } else {
+        }
+        else
+        {
             StringExpandPlaceholders(&gNamePlateBuffer[0], gSpeakerName);
         }
         FillDialogFramePlate();
-        AddTextPrinterParameterized2(1, FONT_SMALL, gNamePlateBuffer, 0, NULL, 1, 0, 2);
+        AddTextPrinterParameterized2(1, FONT_SMALL, gNamePlateBuffer, 0, NULL, 2, 0, 3);
         PutWindowTilemap(1);
         CopyWindowToVram(1, COPYWIN_FULL);
     }
