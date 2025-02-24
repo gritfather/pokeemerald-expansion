@@ -457,7 +457,9 @@ LittlerootTown_KelsieHouse_Kelsie_Text_1:
 
 LittlerootTown_KelsieHouse_Kelsie_Text_2:
 # 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "Hello! I'm Kelsie, and I love lemonade. If\nyou bring me a lemonade, I'll give you a\nPOKEMON.$"
+	.string "Hello! I'm Kelsie, and I love lemonade.\n"
+	.string "If you bring me a lemonade, I'll give\l"
+	.string "you a POKEMON.$"
 
 LittlerootTown_KelsieHouse_Kelsie_Text_3:
 # 43 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
