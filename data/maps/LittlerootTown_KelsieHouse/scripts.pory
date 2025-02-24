@@ -32,8 +32,9 @@ script LittlerootTown_KelsieHouse_Kelsie {
             end
         }
         elif(!flag(TALKED_TO_KELSIE) && !checkitem(ITEM_LEMONADE) || !flag(TALKED_TO_KELSIE) || !checkitem(ITEM_LEMONADE)){
+            speakername("Kelsie")
             msgbox(format("Hello! I'm Kelsie, and I love lemonade. If you bring me a lemonade, I'll give you a POKEMON."), MSGBOX_NPC)
-            waitmessage
+            closemessage
             setflag(TALKED_TO_KELSIE)
             releaseall
             end
@@ -58,6 +59,9 @@ script LittlerootTown_KelsieHouse_Kelsie {
             }
         }
 
+text CommonName_Text_Kelsie{
+    "Kelsie"
+}
 
 script LittlerootTown_KelsieHouse_BallTest{
     lock

@@ -54,7 +54,7 @@ LittlerootTown_KelsieHouse_Kelsie_9:
 # 0 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_KelsieHouse_Kelsie_4
-# 41 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 42 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	goto_if_set TALKED_TO_KELSIE, LittlerootTown_KelsieHouse_Kelsie_6
 	return
 
@@ -88,22 +88,24 @@ LittlerootTown_KelsieHouse_Kelsie_3:
 
 LittlerootTown_KelsieHouse_Kelsie_4:
 # 35 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_1, MSGBOX_NPC
+	speakername LittlerootTown_KelsieHouse_Kelsie_Text_1
 # 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	waitmessage
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_2, MSGBOX_NPC
 # 37 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag TALKED_TO_KELSIE
+	closemessage
 # 38 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag TALKED_TO_KELSIE
+# 39 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
 LittlerootTown_KelsieHouse_Kelsie_5:
-# 42 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_2, MSGBOX_YESNO
 # 43 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_3, MSGBOX_YESNO
+# 44 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LittlerootTown_KelsieHouse_Kelsie_26
-# 54 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 55 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
@@ -142,304 +144,304 @@ LittlerootTown_KelsieHouse_Kelsie_25:
 	goto LittlerootTown_KelsieHouse_Kelsie_21
 
 LittlerootTown_KelsieHouse_Kelsie_26:
-# 44 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeitem ITEM_LEMONADE
 # 45 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	clearflag KELSIE_HOUSE_BALL
+	removeitem ITEM_LEMONADE
 # 46 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	addobject 2
+	clearflag KELSIE_HOUSE_BALL
 # 47 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_BALL_GET, 1
+	addobject 2
 # 48 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0, MSGBOX_AUTOCLOSE
+	setvar KELSIE_HOUSE_BALL_GET, 1
 # 49 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	waitmessage
+	msgbox LittlerootTown_KelsieHouse_Kelsie_Text_0, MSGBOX_AUTOCLOSE
 # 50 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	waitmessage
+# 51 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
 
 LittlerootTown_KelsieHouse_BallTest::
-# 63 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	lock
-# 64 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	faceplayer
-# 65 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_BallTest_Text_0
-# 66 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_POKE_BALL
 # 67 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_1, 1
+	lock
 # 68 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferitemname STR_VAR_2, ITEM_ABILITY_CAPSULE
+	faceplayer
 # 69 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_2, 79
+	msgbox LittlerootTown_KelsieHouse_BallTest_Text_0
 # 70 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferitemname STR_VAR_3, ITEM_ABILITY_PATCH
+	bufferitemname STR_VAR_1, ITEM_POKE_BALL
 # 71 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_3, 80
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_1, 1
 # 72 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultistack 0, 0, TRUE, 6, TRUE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	bufferitemname STR_VAR_2, ITEM_ABILITY_CAPSULE
 # 73 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	switch VAR_RESULT
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_2, 79
 # 74 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	case 1, LittlerootTown_KelsieHouse_BallTest_3
+	bufferitemname STR_VAR_3, ITEM_ABILITY_PATCH
 # 75 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	case 79, LittlerootTown_KelsieHouse_BallTest_4
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_3, 80
 # 76 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	dynmultistack 0, 0, TRUE, 6, TRUE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+# 77 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	switch VAR_RESULT
+# 78 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	case 1, LittlerootTown_KelsieHouse_BallTest_3
+# 79 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	case 79, LittlerootTown_KelsieHouse_BallTest_4
+# 80 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	case 80, LittlerootTown_KelsieHouse_BallTest_5
 LittlerootTown_KelsieHouse_BallTest_1:
-# 78 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 82 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	removeobject 2
-# 79 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 83 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	setflag KELSIE_HOUSE_BALL
-# 80 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 84 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
 LittlerootTown_KelsieHouse_BallTest_3:
-# 74 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 78 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	giveitem ITEM_POKE_BALL
 	goto LittlerootTown_KelsieHouse_BallTest_1
 
 LittlerootTown_KelsieHouse_BallTest_4:
-# 75 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 79 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	giveitem ITEM_ABILITY_CAPSULE
 	goto LittlerootTown_KelsieHouse_BallTest_1
 
 LittlerootTown_KelsieHouse_BallTest_5:
-# 76 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 80 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	giveitem ITEM_ABILITY_PATCH
 	goto LittlerootTown_KelsieHouse_BallTest_1
 
 
 LittlerootTown_KelsieHouse_BallTest2::
-# 85 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	lock
-# 86 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	faceplayer
-# 87 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox LittlerootTown_KelsieHouse_BallTest_Text_0
-# 88 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_DREEPY
 # 89 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_1, 885
+	lock
 # 90 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_GIBLE
+	faceplayer
 # 91 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_2, 443
+	msgbox LittlerootTown_KelsieHouse_BallTest_Text_0
 # 92 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	bufferspeciesname STR_VAR_3, SPECIES_AXEW
+	bufferspeciesname STR_VAR_1, SPECIES_DREEPY
 # 93 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_3, 610
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_1, 885
 # 94 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	bufferspeciesname STR_VAR_2, SPECIES_GIBLE
 # 95 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	switch VAR_RESULT
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_2, 443
 # 96 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	bufferspeciesname STR_VAR_3, SPECIES_AXEW
+# 97 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	dynmultipush LittlerootTown_KelsieHouse_BallTest_Text_3, 610
+# 98 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 99 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	switch VAR_RESULT
+# 100 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	case 885, LittlerootTown_KelsieHouse_BallTest2_3
-# 107 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 111 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	case 443, LittlerootTown_KelsieHouse_BallTest2_4
-# 118 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 122 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	case 610, LittlerootTown_KelsieHouse_BallTest2_5
 LittlerootTown_KelsieHouse_BallTest2_1:
-# 130 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 134 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	removeobject 2
-# 131 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 135 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	setflag KELSIE_HOUSE_BALL
-# 132 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 136 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	releaseall
 	end
 
 LittlerootTown_KelsieHouse_BallTest2_3:
-# 97 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 101 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	showmonpic 885, 9, 3
-# 98 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 102 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO
-# 99 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 103 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LittlerootTown_KelsieHouse_BallTest2_6
-# 103 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 107 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	hidemonpic
-# 104 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 108 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	closemessage
 	end
 
 LittlerootTown_KelsieHouse_BallTest2_4:
-# 108 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 112 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	showmonpic 443, 9, 3
-# 109 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 113 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO
-# 110 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 114 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LittlerootTown_KelsieHouse_BallTest2_9
-# 114 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 118 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	hidemonpic
-# 115 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 119 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	closemessage
 	end
 
 LittlerootTown_KelsieHouse_BallTest2_5:
-# 119 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 123 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	showmonpic 610, 9, 3
-# 120 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 124 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox LittlerootTown_KelsieHouse_YouSureAboutThatText, MSGBOX_YESNO
-# 121 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 125 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq LittlerootTown_KelsieHouse_BallTest2_12
-# 125 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 129 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	hidemonpic
-# 126 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 130 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	closemessage
 	end
 
 LittlerootTown_KelsieHouse_BallTest2_6:
-# 100 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 104 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call placeholder_EventScript_Dreepy
 	goto LittlerootTown_KelsieHouse_BallTest2_1
 
 LittlerootTown_KelsieHouse_BallTest2_9:
-# 111 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 115 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call placeholder_EventScript_Gible
 	goto LittlerootTown_KelsieHouse_BallTest2_1
 
 LittlerootTown_KelsieHouse_BallTest2_12:
-# 122 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 126 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call placeholder_EventScript_Axew
 	goto LittlerootTown_KelsieHouse_BallTest2_1
 
 
 placeholder_EventScript_Dreepy::
-# 138 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 142 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	givemon SPECIES_DREEPY, 5
-# 139 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 143 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq placeholder_EventScript_Dreepy_2
-# 147 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 151 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq placeholder_EventScript_Dreepy_3
-# 156 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 160 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox placeholder_EventScript_Dreepy_Text_1
 placeholder_EventScript_Dreepy_1:
 	return
 
 placeholder_EventScript_Dreepy_2:
-# 140 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 141 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Dreepy_Text_0
-# 142 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 143 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 0
 # 144 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 145 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Dreepy_Text_0
+# 146 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 147 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 0
+# 148 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 149 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknamePartyMon
 	goto placeholder_EventScript_Dreepy_1
 
 placeholder_EventScript_Dreepy_3:
-# 148 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 149 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Dreepy_Text_0
-# 150 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 151 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 0
 # 152 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 153 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Dreepy_Text_0
+# 154 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 155 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 0
+# 156 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 157 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknameBoxMon
 	goto placeholder_EventScript_Dreepy_1
 
 
 placeholder_EventScript_Gible::
-# 162 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 166 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	givemon SPECIES_GIBLE, 5
-# 163 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 167 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq placeholder_EventScript_Gible_2
-# 171 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 175 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq placeholder_EventScript_Gible_3
-# 180 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 184 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox placeholder_EventScript_Dreepy_Text_1
 placeholder_EventScript_Gible_1:
 	return
 
 placeholder_EventScript_Gible_2:
-# 164 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 165 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Gible_Text_0
-# 166 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 167 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 1
 # 168 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 169 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Gible_Text_0
+# 170 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 171 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 1
+# 172 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 173 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknamePartyMon
 	goto placeholder_EventScript_Gible_1
 
 placeholder_EventScript_Gible_3:
-# 172 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 173 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Gible_Text_0
-# 174 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 175 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 1
 # 176 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 177 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Gible_Text_0
+# 178 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 179 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 1
+# 180 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 181 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknameBoxMon
 	goto placeholder_EventScript_Gible_1
 
 
 placeholder_EventScript_Axew::
-# 186 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 190 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	givemon SPECIES_AXEW, 5
-# 187 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 191 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq placeholder_EventScript_Axew_2
-# 195 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 199 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq placeholder_EventScript_Axew_3
-# 204 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 208 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	msgbox placeholder_EventScript_Dreepy_Text_1
 placeholder_EventScript_Axew_1:
 	return
 
 placeholder_EventScript_Axew_2:
-# 188 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 189 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Axew_Text_0
-# 190 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 191 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 2
 # 192 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 193 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Axew_Text_0
+# 194 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 195 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 2
+# 196 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 197 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknamePartyMon
 	goto placeholder_EventScript_Axew_1
 
 placeholder_EventScript_Axew_3:
-# 196 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 197 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	msgbox placeholder_EventScript_Axew_Text_0
-# 198 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	removeobject 2
-# 199 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setvar KELSIE_HOUSE_MON, 2
 # 200 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	setflag KELSIE_HOUSE_BALL
+	playfanfare MUS_OBTAIN_ITEM
 # 201 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	msgbox placeholder_EventScript_Axew_Text_0
+# 202 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	removeobject 2
+# 203 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setvar KELSIE_HOUSE_MON, 2
+# 204 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	setflag KELSIE_HOUSE_BALL
+# 205 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	call NicknameBoxMon
 	goto placeholder_EventScript_Axew_1
 
@@ -451,67 +453,75 @@ LittlerootTown_KelsieHouse_Kelsie_Text_0:
 
 LittlerootTown_KelsieHouse_Kelsie_Text_1:
 # 35 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "Hello! I'm Kelsie, and I love lemonade. If\n"
-	.string "you bring me a lemonade, I'll give you a\l"
-	.string "POKEMON.$"
+	.string "Kelsie$"
 
 LittlerootTown_KelsieHouse_Kelsie_Text_2:
-# 42 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 36 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "Hello! I'm Kelsie, and I love lemonade.\n"
+	.string "If you bring me a lemonade, I'll give\l"
+	.string "you a POKEMON.$"
+
+LittlerootTown_KelsieHouse_Kelsie_Text_3:
+# 43 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "Oh! You brought me a Lemonade?$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_0:
-# 65 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "Woah! There's more than one Pokemon in\n"
-	.string "here$"
+# 69 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "Woah! There's more than one Pokemon\n"
+	.string "in here$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_1:
-# 67 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 71 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "{STR_VAR_1}$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_2:
-# 69 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 73 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "{STR_VAR_2}$"
 
 LittlerootTown_KelsieHouse_BallTest_Text_3:
-# 71 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 75 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "{STR_VAR_3}$"
 
 placeholder_EventScript_Dreepy_Text_0:
-# 141 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 145 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "You received Dreepy$"
 
 placeholder_EventScript_Dreepy_Text_1:
-# 156 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 160 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "No more room$"
 
 placeholder_EventScript_Gible_Text_0:
-# 165 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 169 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "You received Gible$"
 
 placeholder_EventScript_Axew_Text_0:
-# 189 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 193 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "You received Axew$"
 
+CommonName_Text_Kelsie::
+# 62 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "Kelsie$"
+
 LittlerootTown_KelsieHouse_YouSureAboutThatText::
-# 209 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 213 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "Are you sure about that?$"
 
 LittlerootTown_KelsieHouse_Dreepy::
-# 213 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 217 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "I hope you're giving Dreepy lots of\n"
 	.string "Lemonades!$"
 
 LittlerootTown_KelsieHouse_Gible::
-# 217 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 221 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "I hope you're giving Gible lots of\n"
 	.string "Lemonades!$"
 
 LittlerootTown_KelsieHouse_Axew::
-# 221 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+# 225 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
 	.string "I hope you're giving Axew lots of\n"
 	.string "Lemonades!$"
 
 LittlerootTown_KelsieHouse_StillHereText::
-# 225 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
-	.string "I mean this in the nicest way possible.\n"
-	.string "Why are you still here?$"
+# 229 "data/maps/LittlerootTown_KelsieHouse/scripts.pory"
+	.string "I mean this in the nicest way\n"
+	.string "possible. Why are you still here?$"
